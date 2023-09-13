@@ -1,0 +1,9 @@
+import React from 'react';
+
+export default function CenteredLayout({ children }) {
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      {children}
+    </div>
+  );
+}
