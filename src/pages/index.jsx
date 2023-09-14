@@ -8,7 +8,7 @@ const Index = () => {
     <Main
       meta={
         <Meta
-          title="Landing Page"
+          title="ODAQUE"
           description="This would be the landing page in our website"
         />
       }
