@@ -2,8 +2,6 @@
 
 import React from "react";
 
-
-
 const Button = ({
   text,
   color,
@@ -15,11 +13,15 @@ const Button = ({
   font,
   fontCat,
   textSize,
+  height,
+  width,
+  usingFont,
+  size,
 }) => {
   return (
     <button
       type="button"
-      className={` flex ${rounded} ${border} border-blue-600 ${fontCat} ${px} ${py} ${font} ${textSize} hover:opacity-90 ${color} ${bg} ${
+      className={` flex justify-center items-center ${usingFont} ${size} ${rounded} ${border} ${height} ${width} border-blue-600 ${fontCat} ${px} ${py} ${font} ${textSize} hover:opacity-90 ${color} ${bg} ${
         text === "Members" || text === "Dance Courses" ? "shadow-md" : ""
       } `}
     >

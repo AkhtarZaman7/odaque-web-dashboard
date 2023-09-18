@@ -37,7 +37,7 @@ const NotificationDropdown = () => {
     },
   ];
   return (
-    <div className="absolute -right-6 top-12 z-50 max-h-[400px] overflow-y-auto rounded-md   shadow-lg">
+    <div className="absolute -right-6 top-9 z-50 max-h-[400px] overflow-y-auto rounded-md   shadow-lg">
       <div
         className="flex flex-col rounded-md  shadow-md "
         style={{ height: "400px", width: "400px" }}
@@ -46,7 +46,13 @@ const NotificationDropdown = () => {
           <AppIcons.UpArrow />
         </div>
         <div className="bg-white">
-          <div className="flex items-center  justify-between rounded-md bg-blueSelected p-3">
+          <div
+            style={{
+              borderTopLeftRadius: "10px",
+              borderTopRightRadius: "10px",
+            }}
+            className="flex items-center  justify-between bg-blueSelected p-3"
+          >
             <p className="font-inter font-semibold text-white">
               Notification(12)
             </p>

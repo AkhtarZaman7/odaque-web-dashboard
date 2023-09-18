@@ -91,7 +91,7 @@ export default function SideBar(props) {
                 <ListItem key="odaque" disablePadding className="rounded-md">
                   <ListItemButton>
                     <ListItemIcon>
-                      <AppIcons.Logo />
+                      <AppIcons.weblogo />
                     </ListItemIcon>
                     <ListItemText
                       primary={
@@ -132,14 +132,16 @@ export default function SideBar(props) {
                                 color={
                                   isSelected(text).selected
                                     ? "white"
-                                    : "#a9b2cf"
+                                    : "#5b5f77"
                                 }
                               />
                             </ListItemIcon>
                             <ListItemText
                               primary={text}
-                              className={`font-montserrat ${
-                                isSelected(text).color
+                              className={`font-inter font-semibold ${
+                                isSelected(text).selected
+                                  ? "text-white"
+                                  : "#5b5f77"
                               } rounded-md `}
                             />
                           </ListItemButton>
@@ -178,15 +180,17 @@ export default function SideBar(props) {
                           <ListItemIcon>
                             <Icon
                               color={
-                                isSelected(text).selected ? "white" : "#a9b2cf"
+                                isSelected(text).selected ? "white" : "#5b5f77"
                               }
                             />
                           </ListItemIcon>
 
                           <ListItemText
                             primary={text}
-                            className={`font-montserrat ${
-                              isSelected(text).color
+                            className={`font-inter font-semibold ${
+                              isSelected(text).selected
+                                ? "text-white"
+                                : "#5b5f77"
                             } rounded-md `}
                           />
                         </ListItemButton>
@@ -204,7 +208,7 @@ export default function SideBar(props) {
                 <div className="pt-1">
                   <AppIcons.Light />
                 </div>
-                <p className="ml-6 pt-1 text-lightmode">Light mode</p>
+                <p className="ml-6 pt-1 font-inter">Light mode</p>
                 <div
                   className={`h-8 w-14 items-center rounded-full bg-globalBackground p-1 ${
                     lightMode ? "bg-green-500" : ""
@@ -215,7 +219,7 @@ export default function SideBar(props) {
                       lightMode ? "translate-x-6" : ""
                     }`}
                   >
-                    <AppIcons.DarkLight />
+                    <AppIcons.DarkLight fill="white" />
                   </div>
                 </div>
               </button>
@@ -224,7 +228,7 @@ export default function SideBar(props) {
         </Box>
       </Drawer>
       <div className="flex-1 bg-bgcolor">
-        <div className="grid h-20 grid-cols-[70%_5%_25%] items-center bg-white pl-6 pr-4">
+        <div className="grid h-20 grid-cols-[68%_7%_25%] items-center bg-white pl-6 pr-4">
           <div className="flex h-11 flex-row items-center rounded border border-border p-2">
             <AppIcons.Search />
 

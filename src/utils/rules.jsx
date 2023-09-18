@@ -26,4 +26,37 @@ export const RULES = {
         'Username should contain at least 5 characters and can include letters, numbers, and underscores.',
     },
   ],
+  firstName:[
+    {
+      required: true,
+      message: "Please enter your First Name!",
+    },
+    {
+      pattern: /^[A-Za-z]+$/,
+      message:
+        "First Name should contain only alphabetic characters.",
+    },
+  ],
+  lastName:[
+    [
+      {
+        required: true,
+        message: "Please enter your Last Name!",
+      },
+      {
+        pattern: /^[A-Za-z]+$/,
+        message: "Last Name should contain only alphabetic characters.",
+      },
+    ]
+  ],
+  email:[
+    {
+      type: "email",
+      message: "Please enter a valid Email Address!",
+    },
+    {
+      required: true,
+      message: "Please enter your Email Address!",
+    },
+  ]
 };

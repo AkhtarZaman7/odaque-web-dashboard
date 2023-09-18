@@ -82,7 +82,7 @@ const Forms = () => {
     setSelectedInstructor(value);
   };
   return (
-    <div className="rounded-md bg-white px-2 pt-3">
+    <div className="rounded-md bg-white px-4 pt-3">
       <h1 className="mb-4 text-xl font-semibold">Create Session</h1>
       <Form name="sessionForm" onFinish={onFinish}>
         <Row gutter={16}>
@@ -275,22 +275,40 @@ const Forms = () => {
             </Form.Item>
           </Col>
         </Row>
-        <Col>
-          <p className="font-inter">
-            Description<span className="pl-1 text-xs text-red-500">*</span>
-          </p>
-          <Form.Item
-            className="pt-1 font-inter"
-            name="description"
-            rules={[{ required: true, message: "Please enter Description!" }]}
-          >
-            <Input.TextArea
-              size="large"
-              placeholder="Enter Session's Description"
-              autoSize={{ minRows: 5, maxRows: 7 }} // Adjust minRows and maxRows as needed
-            />
-          </Form.Item>
-        </Col>
+        <div className="grid grid-cols-2 space-x-5">
+          <Col>
+            <p className="font-inter">
+              Description<span className="pl-1 text-xs text-red-500">*</span>
+            </p>
+            <Form.Item
+              className="pt-1 font-inter"
+              name="description"
+              rules={[{ required: true, message: "Please enter Description!" }]}
+            >
+              <Input.TextArea
+                size="large"
+                placeholder="Enter Description"
+                autoSize={{ minRows: 5, maxRows: 7 }} // Adjust minRows and maxRows as needed
+              />
+            </Form.Item>
+          </Col>
+          <Col>
+            <p className="font-inter">
+              Benefits<span className="pl-1 text-xs text-red-500">*</span>
+            </p>
+            <Form.Item
+              className="pt-1 font-inter"
+              name="description"
+              rules={[{ required: true, message: "Please enter Benefits!" }]}
+            >
+              <Input.TextArea
+                size="large"
+                placeholder={`1. Improved Physical Fitness\n2. Enhanced Mental Well-being\n3. Effective Weight Management`}
+                autoSize={{ minRows: 5, maxRows: 7 }} // Adjust minRows and maxRows as needed
+              />
+            </Form.Item>
+          </Col>
+        </div>
         <Col>
           <p className="mb-1 font-inter">
             Upload Image<span className="pl-1 text-xs text-red-500">*</span>
@@ -321,13 +339,13 @@ const Forms = () => {
           <div />
           <div className="flex flex-row items-center gap-4 pt-16">
             <Form.Item>
-              <Button className="flex items-center border border-blueSelected px-16 py-4 font-inter font-semibold text-blueSelected">
+              <Button className="flex items-center h-[40px] w-[174px] justify-center text-[16px] border border-blueSelected px-16 py-4 font-inter font-medium text-blueSelected">
                 Back
               </Button>
             </Form.Item>
             <Form.Item>
               <Button
-                className="flex items-center bg-blueSelected px-16 py-4 font-inter font-semibold text-white"
+                className="flex items-center h-[40px] w-[174px] justify-center text-[16px] bg-blueSelected px-16 py-4 font-inter font-medium text-white"
                 htmlType="submit"
               >
                 Next

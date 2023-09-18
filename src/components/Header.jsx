@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import logo from '../../public/assets/images/Vector.png';
 import Button from "../components/common/Button"
+import AppIcons from "../../public/assets/icons"
 
 const Header = () => {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between px-20 py-4 font-montserrat shadow">
       <div className="flex items-center">
-        <Image src={logo} alt="logo" />
+        <AppIcons.weblogo/>
         <div className="ml-2 text-xl font-bold text-blueSelected">ODAQUE</div>
       </div>
       <div className="flex items-center gap-10">

@@ -1,24 +1,23 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-
-import rightArrow from '../../public/assets/images/arrow-right.png';
-import odaque_logo from '../../public/assets/images/odaque_white_logo.png';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import AppIcons from "../../public/assets/icons";
+import rightArrow from "../../public/assets/images/arrow-right.png";
 
 const Footer = () => {
   const items = [
-    { title: 'About Us', href: '/' },
-    { title: 'Services', href: '/' },
-    { title: 'Contact', href: '/' },
-    { title: 'Blog', href: '/' },
+    { title: "About Us", href: "/" },
+    { title: "Services", href: "/" },
+    { title: "Contact", href: "/" },
+    { title: "Blog", href: "/" },
   ];
   const Resources = [
-    { title: 'Session Management', href: '/' },
-    { title: 'Courses Scheduling', href: '/' },
-    { title: 'Services Management', href: '/' },
-    { title: 'Expert Instructor', href: '/' },
+    { title: "Session Management", href: "/" },
+    { title: "Courses Scheduling", href: "/" },
+    { title: "Services Management", href: "/" },
+    { title: "Expert Instructor", href: "/" },
   ];
 
   return (
@@ -29,7 +28,7 @@ const Footer = () => {
             <div className=" ">
               <div className="flex w-64 flex-col">
                 <div className="flex flex-row items-center">
-                  <Image src={odaque_logo} alt="logo" />
+                  <AppIcons.whitelogo />
                   <p className="ml-3 text-xl font-bold text-white">ODAQUE</p>
                 </div>
                 <p className="pt-4 text-sm font-light text-white">
@@ -89,7 +88,7 @@ const Footer = () => {
                     <input
                       type="text"
                       className=" bg-transparent p-2 text-sm text-white outline-none"
-                      style={{ color: 'white' }}
+                      style={{ color: "white" }}
                       placeholder="Enter your email"
                     />
                   </div>
@@ -100,13 +99,9 @@ const Footer = () => {
                         type="button"
                       >
                         <p>Join Now</p>
-                        <Image
-                          src={rightArrow}
-                          alt="rightArrow"
-                          width={22}
-                          height={22}
-                          className="ml-2"
-                        />
+                        <div className="ml-[16px]">
+                          <AppIcons.rightarrow />
+                        </div>
                       </button>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Form, Input, Button, Row, Col, Typography } from "antd";
+import { RULES } from "../../utils/rules";
 
 const { Title } = Typography;
 
@@ -23,17 +24,7 @@ const SignupForm = () => {
           <Form.Item
             label="First Name"
             name="firstName"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your First Name!",
-              },
-              {
-                pattern: /^[A-Za-z]+$/,
-                message:
-                  "First Name should contain only alphabetic characters.",
-              },
-            ]}
+            rules={RULES.firstName}
           >
             <Input placeholder="Enter First Name" size="large" />
           </Form.Item>
@@ -41,16 +32,7 @@ const SignupForm = () => {
           <Form.Item
             label="Last Name"
             name="lastName"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your Last Name!",
-              },
-              {
-                pattern: /^[A-Za-z]+$/,
-                message: "Last Name should contain only alphabetic characters.",
-              },
-            ]}
+            rules={RULES.lastName}
           >
             <Input placeholder="Enter Last Name" size="large" />
           </Form.Item>
@@ -58,16 +40,7 @@ const SignupForm = () => {
           <Form.Item
             label="Email Address"
             name="email"
-            rules={[
-              {
-                type: "email",
-                message: "Please enter a valid Email Address!",
-              },
-              {
-                required: true,
-                message: "Please enter your Email Address!",
-              },
-            ]}
+            rules={RULES.email}
           >
             <Input placeholder="Enter Email Address" size="large" />
           </Form.Item>
@@ -75,22 +48,7 @@ const SignupForm = () => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your Password!",
-              },
-              {
-                min: 8,
-                message: "Password must be at least 8 characters long.",
-              },
-              {
-                pattern:
-                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-                message:
-                  "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-              },
-            ]}
+            rules={RULES.password}
           >
             <Input.Password placeholder="Enter Password" size="large" />
           </Form.Item>
