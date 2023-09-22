@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Input } from "antd";
-import AppIcons from "../../../../public/assets/icons";
+import AppIcons from "../../../public/assets/icons";
 import Link from "next/link";
 
 const VerificationCodeInput = () => {
@@ -50,7 +50,7 @@ const VerificationCodeInput = () => {
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 ">
-      <div className=" bg-white px-16">
+      <div className=" bg-white px-16 rounded-md">
         <div className="bg-white py-[35px] rounded-lg max-w-md w-full ">
           <div className="text-center">
             <div>
@@ -71,29 +71,15 @@ const VerificationCodeInput = () => {
               Enter your 4 digits code that you received on your email.
             </p>
             <div className="mt-[30px]">
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="flex justify-center">
                 {verificationCode.map((value, index) => (
                   <Input
                     key={index}
                     id={`verificationInput-${index}`}
                     value={value}
-                    className={`${
+                    className={` w-[84px] h-[76px] mr-[10px] font-[36px] font-sans text-center text-descriptiontext ${
                       isVerifyClicked && !isCodeCorrect ? "border-red-500" : ""
                     }`}
-                    style={{
-                      width: "84px",
-                      height: "76px",
-                      marginRight: "10px",
-                      textAlign: "center",
-                      fontSize: "36px",
-                      fontFamily: "sans",
-                      color: "#5b5f77",
-                    }}
                     maxLength={1}
                     onChange={(e) => handleInputChange(index, e.target.value)}
                     onKeyPress={(e) => handleInputKeyPress(index, e)}
@@ -111,7 +97,7 @@ const VerificationCodeInput = () => {
 
             <div className="pt-6">
               {isCodeCorrect ? (
-                <Link href="/sign-in/email-verified">
+                <Link href="/email-verified">
                   <button
                     type="primary"
                     className="w-[340px] py-[14px] rounded-md bg-blueSelected"

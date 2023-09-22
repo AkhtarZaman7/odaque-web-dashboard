@@ -1,13 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-import AppIcons from "../../../../public/assets/icons";
+import AppIcons from "../../../public/assets/icons";
 import Link from "next/link";
 
 const EmailVerified = () => {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 ">
-      <div className=" bg-white px-16">
+      <div className=" bg-white px-16 rounded-md">
         <div className="bg-white py-[35px] rounded-lg max-w-md w-full ">
           <div className="text-center">
             <div>
@@ -24,10 +24,9 @@ const EmailVerified = () => {
               Your mail account has been successfully verified.
             </p>
             <div className="mt-[30px]">
-              <Link href="/sign-in/create-password">
+              <Link href="/create-password">
                 <button
                   type="primary"
-                  //onClick={() => setSendResetEmailModalVisible(false)}
                   className="w-[340px] py-[14px] rounded-md bg-blueSelected"
                 >
                   <p className="text-white text-[18px] font-bold font-inter">

@@ -107,6 +107,7 @@ export const RULES = {
       },
     }),
   ],
+
   lastName: [
     {
       required: true,
@@ -116,5 +117,19 @@ export const RULES = {
       pattern: /^[A-Za-z]+$/,
       message: "Last Name should contain only alphabetic characters.",
     },
+  ],
+  confirmnewpassword: [
+    {
+      required: true,
+      message: "Please confirm your new password",
+    },
+    ({ getFieldValue }) => ({
+      validator(_, value) {
+        if (!value || getFieldValue("newPassword") === value) {
+          return Promise.resolve();
+        }
+        return Promise.reject(new Error("The two passwords do not match"));
+      },
+    }),
   ],
 };

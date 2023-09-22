@@ -1,16 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import AppIcons from "../../../public/assets/icons";
-import { Input, Form, Checkbox, Button } from "antd";
-import ForgotPassword from "../../components/ForgotPassword";
+import { Input, Form, Checkbox } from "antd";
 import Link from "next/link";
 import AuthPreview from "../../components/AuthPreview";
 import { RULES } from "../../utils/rules";
+import { PREFIX } from "../../utils/prefix";
 
 const SignUp = () => {
-  // const [form] = Form.useForm();
-  // const fieldErrors = form.getFieldsError();
-
   const [isFocused, setIsFocused] = useState(false);
   const [isConfirmFocused, setIsConfirmFocused] = useState(false);
   const [isUserFocused, setIsUserFocused] = useState(false);
@@ -44,19 +41,10 @@ const SignUp = () => {
   const handleConfirmPasswordBlur = () => {
     setIsConfirmFocused(false);
   };
-
-  const svgUserFillStyle = {
-    fill: isUserFocused ? "#5b5f77" : "#C0C0C5",
-  };
-  const svgEmailFillStyle = {
-    fill: isEmailFocused ? "#5b5f77" : "#C0C0C5",
-  };
-
-  const svgPasswordFillStyle = {
-    fill: isFocused ? "#5b5f77" : "#C0C0C5",
-  };
-  const svgConfirmPasswordFillStyle = {
-    fill: isConfirmFocused ? "#5b5f77" : "#C0C0C5",
+  const svgFillStyle = (state) => {
+    return {
+      fill: state ? "#5b5f77" : "#C0C0C5",
+    };
   };
   const onFinish = (values) => {
     console.log("Received values:", values);
@@ -80,119 +68,89 @@ const SignUp = () => {
               <div className="pt-7 flex flex-col gap-4">
                 <div className="flex flex-col gap-4">
                   <Form.Item
-                    className={`font-inter relative ${
+                    className={`font-inter relative m-0 p-0 ${
                       isUserFocused ? "h-[50px]" : "h-[50px]"
                     }`}
                     name="FullName"
                     size="small"
-                    style={{
-                      margin: 0,
-                      padding: 0,
-                    }}
                     rules={RULES.fullname}
                   >
                     <Input
-                      style={{ height: "3rem", paddingLeft: "23px" }}
+                      className="h-[3rem] pl-[23px]"
                       placeholder="Full Name"
                       onFocus={handleUserFocus}
                       onBlur={handleUserBlur}
                       prefix={
-                        <div style={{ marginRight: "4px" }}>
-                          <AppIcons.user fill={svgUserFillStyle.fill} />
-                        </div>
+                        <PREFIX.userprefix
+                          svgFillStyle={svgFillStyle}
+                          isUserFocused={isUserFocused}
+                        />
                       }
                     />
                   </Form.Item>
 
                   <Form.Item
-                    className={`font-inter relative ${
+                    className={`font-inter relative m-0 p-0 ${
                       isUserFocused ? "h-[50px]" : "h-[50px]"
                     }`}
                     name="email"
                     size="small"
-                    style={{
-                      margin: 0,
-                      padding: 0,
-                    }}
                     rules={RULES.email}
                   >
                     <Input
-                      style={{
-                        height: "3rem",
-                        paddingLeft: "23px",
-                      }}
                       placeholder="Johnsmith123@gmail.com"
-                      className="placeholder:text-xs text-black text-sm"
+                      className="placeholder:text-xs h-[3rem] pl-[23px] text-black text-sm"
                       onFocus={handleEmailFocus}
                       onBlur={handleEmailBlur}
                       prefix={
-                        <div style={{ marginRight: "4px" }}>
-                          <AppIcons.email fill={svgEmailFillStyle.fill} />
-                        </div>
+                        <PREFIX.emailprefix
+                          svgFillStyle={svgFillStyle}
+                          isEmailFocused={isEmailFocused}
+                        />
                       }
                     />
                   </Form.Item>
 
                   <Form.Item
-                    className={`font-inter relative ${
+                    className={`font-inter relative p-0 m-0 ${
                       isUserFocused ? "h-[50px]" : "h-[50px]"
                     }`}
                     name="Password"
                     size="small"
-                    style={{
-                      margin: 0,
-                      padding: 0,
-                    }}
                     rules={RULES.password}
                   >
                     <Input.Password
-                      style={{
-                        height: "3rem",
-                        paddingRight: "23px",
-                        paddingLeft: "23px",
-                      }}
+                      className="h-[3rem] pr-[23px] pl-[23px]"
                       placeholder="Password"
                       onFocus={handlePasswordFocus}
                       onBlur={handlePasswordBlur}
                       prefix={
-                        <div style={{ marginRight: "4px" }}>
-                          <AppIcons.password fill={svgPasswordFillStyle.fill} />
-                        </div>
+                        <PREFIX.passwrodprefix
+                          svgFillStyle={svgFillStyle}
+                          isFocused={isFocused}
+                        />
                       }
-                      suffix={<AppIcons.eye fill={svgPasswordFillStyle.fill} />}
                     />
                   </Form.Item>
 
                   <Form.Item
-                    className={`font-inter relative ${
+                    className={`font-inter relative p-0 m-0 ${
                       isUserFocused ? "h-[50px]" : "h-[50px]"
                     }`}
                     name="Confirm Password"
                     size="small"
-                    style={{
-                      margin: 0,
-                      padding: 0,
-                    }}
                     rules={RULES.confirmpassword}
                   >
                     <Input.Password
-                      style={{
-                        height: "3rem",
-                        paddingRight: "23px",
-                        paddingLeft: "23px",
-                      }}
+                      className="h-[3rem] pr-[23px] pl-[23px]"
                       placeholder="Confirm Password"
                       onFocus={handleConfirmPasswordFocus}
                       onBlur={handleConfirmPasswordBlur}
                       prefix={
-                        <div style={{ marginRight: "4px" }}>
-                          <AppIcons.password
-                            fill={svgConfirmPasswordFillStyle.fill}
-                          />
-                        </div>
-                      }
-                      suffix={
-                        <AppIcons.eye fill={svgConfirmPasswordFillStyle.fill} />
+                        <PREFIX.confirmpasswordprefix
+                          svgFillStyle={svgFillStyle}
+                          isConfirmFocused={isConfirmFocused}
+                        />
                       }
                     />
                   </Form.Item>

@@ -5,6 +5,8 @@ import { Input, Form, Checkbox, Button } from "antd";
 import ForgotPassword from "../../components/ForgotPassword";
 import Link from "next/link";
 import AuthPreview from "../../components/AuthPreview";
+import { RULES } from "../../utils/rules";
+import { PREFIX } from "../../utils/prefix";
 
 const SignIn = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -26,13 +28,12 @@ const SignIn = () => {
     setIsFocused(false);
   };
 
-  const svgUserFillStyle = {
-    fill: isUserFocused ? "#5b5f77" : "#C0C0C5", // Change fill color based on focus
+  const svgFillStyle = (state) => {
+    return {
+      fill: state ? "#5b5f77" : "#C0C0C5",
+    };
   };
 
-  const svgPasswordFillStyle = {
-    fill: isFocused ? "#5b5f77" : "#C0C0C5", // Change fill color based on focus
-  };
   return (
     <div className=" grid grid-cols-[60%_40%] h-full">
       <AuthPreview />
@@ -47,62 +48,41 @@ const SignIn = () => {
             <div className="pt-7 flex flex-col gap-4">
               <div className="flex flex-col gap-4">
                 <Form.Item
-                  className="font-inter"
+                  className="font-inter p-0 m-0"
                   name="FullName"
                   size="small"
-                  style={{
-                    margin: 0,
-                    padding: 0,
-                  }}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter Full Name!",
-                    },
-                  ]}
+                  rules={RULES.fullname}
                 >
                   <Input
-                    style={{ height: "3rem", paddingLeft: "23px" }}
+                    className="h-[3rem] pl-[23px]"
                     placeholder="Full Name"
                     onFocus={handleUserFocus}
                     onBlur={handleUserBlur}
                     prefix={
-                      <div style={{ marginRight: "4px" }}>
-                        <AppIcons.user fill={svgUserFillStyle.fill} />
-                      </div>
+                      <PREFIX.fullnameprefix
+                        svgFillStyle={svgFillStyle}
+                        isUserFocused={isUserFocused}
+                      />
                     }
                   />
                 </Form.Item>
                 <Form.Item
-                  className="font-inter"
+                  className="font-inter p-0 m-0"
                   name="Password"
                   size="small"
-                  style={{
-                    margin: 0,
-                    padding: 0,
-                  }}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter Password!",
-                    },
-                  ]}
+                  rules={RULES.password}
                 >
                   <Input.Password
-                    style={{
-                      height: "3rem",
-                      paddingRight: "23px",
-                      paddingLeft: "23px",
-                    }}
+                    className="pr-[23px] pl-[23px] h-[3rem]"
                     placeholder="Password"
                     onFocus={handlePasswordFocus}
                     onBlur={handlePasswordBlur}
                     prefix={
-                      <div style={{ marginRight: "4px" }}>
-                        <AppIcons.password fill={svgPasswordFillStyle.fill} />
-                      </div>
+                      <PREFIX.loginpasswordprefix
+                        svgFillStyle={svgFillStyle}
+                        isFocused={isFocused}
+                      />
                     }
-                    suffix={<AppIcons.eye fill={svgPasswordFillStyle.fill} />}
                   />
                 </Form.Item>
               </div>

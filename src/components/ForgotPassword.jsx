@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import { Input, Form, Button, Modal } from "antd";
+import { RULES } from "../utils/rules";
 import Link from "next/link";
+import { PREFIX } from "../utils/prefix";
 
 const ForgotPassword = () => {
   const [isEmailFocused, setIsEmailFocused] = useState(false);
@@ -28,8 +30,13 @@ const ForgotPassword = () => {
     setModalVisible(false);
     setSendResetEmailModalVisible(true);
   };
-  const svgEmailFillStyle = {
-    fill: isEmailFocused ? "#5b5f77" : "#C0C0C5", // Change fill color based on focus
+  // const svgEmailFillStyle = {
+  //   fill: isEmailFocused ? "#5b5f77" : "#C0C0C5", // Change fill color based on focus
+  // };
+  const svgFillStyle = (state) => {
+    return {
+      fill: state ? "#5b5f77" : "#C0C0C5",
+    };
   };
   return (
     <>
@@ -40,15 +47,11 @@ const ForgotPassword = () => {
           </p>
         </button>
         <Modal
-          title={
-            <p style={{ fontSize: "25px", fontWeight: "bold" }}>
-              Forgot Password?
-            </p>
-          }
+          title={<p className="text-[25px] font-bold">Forgot Password?</p>}
           open={modalVisible}
           onCancel={handleModalCancel}
           centered
-          width={400} // Adjust the width of the modal as needed
+          width={400}
           footer={[
             <Button
               key="send"
@@ -62,37 +65,29 @@ const ForgotPassword = () => {
             </Button>,
           ]}
         >
-          <div style={{ marginBottom: "16px" }}>
-            <p style={{ marginBottom: "8px" }}>
+          <div className="mb-[16px]">
+            <p className="mb-8px">
               Enter your email address and we will send you a verification email
               to reset your password.
             </p>
           </div>
 
           <Form.Item
-            className="font-inter"
+            className="font-inter m-0 p-0"
             name="Email"
             size="small"
-            style={{
-              margin: 0,
-              padding: 0,
-            }}
-            rules={[
-              {
-                required: true,
-                message: "Please enter valid Email Address!",
-              },
-            ]}
+            rules={RULES.email}
           >
             <Input
-              style={{ height: "3rem", paddingLeft: "23px" }}
+              className="h-[3rem] pl-[23px]"
               placeholder="Enter Email"
               onFocus={handleEmailFocus}
               onBlur={handleEmailBlur}
               prefix={
-                <div style={{ marginRight: "7px" }}>
-                  <AppIcons.email fill={svgEmailFillStyle.fill} />
-                </div>
+                <PREFIX.forgotpassemailprefix
+                  svgFillStyle={svgFillStyle}
+                  isEmailFocused={isEmailFocused}
+                />
               }
             />
           </Form.Item>
@@ -100,7 +95,7 @@ const ForgotPassword = () => {
         {sendResetEmailModalVisible && (
           <>
             <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 ">
-              <div className=" bg-white px-16">
+              <div className=" bg-white px-16 rounded-md">
                 <div className="bg-white py-[35px] rounded-lg max-w-md w-full ">
                   <div className="text-center">
                     <div>
@@ -137,7 +132,7 @@ const ForgotPassword = () => {
                       </button>
                     </div>
                     <div className="pt-6">
-                      <Link href="/sign-in/verification-code">
+                      <Link href="/verification-code">
                         <button
                           type="primary"
                           onClick={() => setSendResetEmailModalVisible(false)}

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 import AppIcons from "../../public/assets/icons";
 
 const Advantages = () => {
@@ -58,8 +57,8 @@ const Advantages = () => {
         </div>
 
         <div className="mt-0 grid grid-cols-2 gap-4">
-          {columnData1.map((item) => (
-            <div key={uuidv4()} className="p-4 pt-0">
+          {columnData1.map((item, index) => (
+            <div key={index.toString()} className="p-4 pt-0">
               <div className="mb-4 ">
                 {item.imageSrc && <item.imageSrc />}
                 <h2 className=" text-lg mt-7 font-semibold">{item.title}</h2>

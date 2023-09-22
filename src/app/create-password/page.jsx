@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Input, Form } from "antd";
-import AppIcons from "../../../../public/assets/icons";
+import AppIcons from "../../../public/assets/icons";
 import Link from "next/link";
+import { RULES } from "../../utils/rules";
 
 const CreatePassword = () => {
   const handlePasswordChange = (e) => {
@@ -10,7 +11,7 @@ const CreatePassword = () => {
   };
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 ">
-      <div className=" bg-white px-16">
+      <div className=" bg-white px-16 rounded-md">
         <div className="bg-white py-[35px] rounded-lg max-w-md w-full ">
           <div className="text-center">
             <div>
@@ -30,24 +31,11 @@ const CreatePassword = () => {
               <Form>
                 <Form.Item
                   name="newPassword"
-                  style={{
-                    margin: 16,
-                    padding: 0,
-                  }}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter a new password",
-                    },
-                  ]}
+                  className="m-[16px] p-0"
+                  rules={RULES.password}
                 >
                   <Input
-                    style={{
-                      height: "3rem",
-                      paddingLeft: "23px",
-                      borderRadius: "25px",
-                      width: "340px",
-                    }}
+                    className="h-[3rem] pl-[23px] w-[340px] rounded-[25px]"
                     placeholder="Enter new password"
                     onChange={handlePasswordChange}
                   />
@@ -56,34 +44,12 @@ const CreatePassword = () => {
                 <Form.Item
                   name="confirmNewPassword"
                   dependencies={["newPassword"]}
-                  style={{
-                    margin: 16,
-                    padding: 0,
-                  }}
+                  className="m-[16px] p-0"
                   hasFeedback
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please confirm your new password",
-                    },
-                    ({ getFieldValue }) => ({
-                      validator(_, value) {
-                        if (!value || getFieldValue("newPassword") === value) {
-                          return Promise.resolve();
-                        }
-                        return Promise.reject(
-                          new Error("The two passwords do not match")
-                        );
-                      },
-                    }),
-                  ]}
+                  rules={RULES.confirmnewpassword}
                 >
                   <Input
-                    style={{
-                      height: "3rem",
-                      paddingLeft: "23px",
-                      borderRadius: "25px",
-                    }}
+                    className="h-[3rem] pl-[23px] w-[340px] rounded-[25px]"
                     placeholder="Confirm new password"
                     onChange={handlePasswordChange}
                   />
@@ -92,10 +58,9 @@ const CreatePassword = () => {
             </div>
 
             <div className="mt-[38px]">
-              <Link href="/sign-in/create-password">
+              <Link href="/sign-in">
                 <button
                   type="primary"
-                  //onClick={() => setSendResetEmailModalVisible(false)}
                   className="w-[340px] py-[14px] rounded-md bg-blueSelected"
                 >
                   <p className="text-white text-[18px] font-bold font-inter">
