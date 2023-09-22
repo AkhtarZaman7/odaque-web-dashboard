@@ -7,6 +7,7 @@ import AppIcons from "../../public/assets/icons";
 import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
 import profilePicture from "../../public/assets/images/profilepicture.png";
 import Link from "next/link";
+import { SessionDetails } from "../components/common/dummy";
 
 const iconComponents = [
   AppIcons.completed,
@@ -21,84 +22,6 @@ const iconComponents = [
 ];
 
 const SessionActivityDetails = () => {
-  const SessionDetails = [
-    {
-      id: 1,
-      picture: fitnessPicture.src,
-      title: "Lorem ipsum dolor sit amet,",
-      price: "$10.0",
-      date: "22 Nov - 30 Nov",
-      rating: 15,
-      details:
-        "High-Intensity Interval Training (HIIT) Cardio, Boost your fitness and torch calories",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit",
-      profilePicture: profilePicture.src,
-      Name: "Jane Cooper",
-      status: "Active",
-      locationIcon: iconComponents[7],
-      starIcon: iconComponents[8],
-      studio: "Studio A",
-      unionIcon: iconComponents[6],
-    },
-    {
-      id: 2,
-      picture: fitnessPicture.src,
-      title: "Lorem ipsum dolor sit amet,",
-      details:
-        "High-Intensity Interval Training (HIIT) Cardio, Boost your fitness and torch calories",
-      price: "$10.0",
-      date: "22 Nov - 30 Nov",
-      rating: 15,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit",
-      profilePicture: profilePicture.src,
-      Name: "Jane Cooper",
-      status: "Active",
-      locationIcon: iconComponents[7],
-      starIcon: iconComponents[8],
-      studio: "Studio A",
-      unionIcon: iconComponents[6],
-    },
-    {
-      id: 3,
-      picture: fitnessPicture.src,
-      title: "Lorem ipsum dolor sit amet,",
-      details:
-        "High-Intensity Interval Training (HIIT) Cardio, Boost your fitness and torch calories",
-      price: "$10.0",
-      date: "22 Nov - 30 Nov",
-      rating: 15,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit",
-      profilePicture: profilePicture.src,
-      Name: "Jane Cooper",
-      status: "Active",
-      locationIcon: iconComponents[7],
-      starIcon: iconComponents[8],
-      studio: "Studio A",
-      unionIcon: iconComponents[6],
-    },
-    {
-      id: 4,
-      picture: fitnessPicture.src,
-      title: "Lorem ipsum dolor sit amet,",
-      details:
-        "High-Intensity Interval Training (HIIT) Cardio, Boost your fitness and torch calories",
-      price: "$10.0",
-      date: "22 Nov - 30 Nov",
-      rating: 15,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit",
-      profilePicture: profilePicture.src,
-      Name: "Jane Cooper",
-      status: "Active",
-      locationIcon: iconComponents[7],
-      starIcon: iconComponents[8],
-      studio: "Studio A",
-      unionIcon: iconComponents[6],
-    },
-  ];
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 pt-6">

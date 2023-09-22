@@ -1,24 +1,22 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import logo from '../../public/assets/images/Vector.png';
-import Button from "../components/common/Button"
-import AppIcons from "../../public/assets/icons"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import Button from "../components/common/Button";
+import AppIcons from "../../public/assets/icons";
 
 const Header = () => {
   const pathname = usePathname();
-  const [active, setActive] = useState('/');
+  const [active, setActive] = useState("/");
 
   const links = [
-    { title: 'Home', href: '/' },
-    { title: 'How it Works', href: '/about' },
-    { title: 'Pricing', href: '/contact' },
-    { title: 'Become a Member', href: '/works' },
-    { title: 'Connect', href: '/works' },
+    { title: "Home", href: "/" },
+    { title: "How it Works", href: "/about" },
+    { title: "Pricing", href: "/contact" },
+    { title: "Become a Member", href: "/works" },
+    { title: "Connect", href: "/works" },
   ];
 
   useEffect(() => {
@@ -31,7 +29,7 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between px-20 py-4 font-montserrat shadow">
       <div className="flex items-center">
-        <AppIcons.weblogo/>
+        <AppIcons.weblogo />
         <div className="ml-2 text-xl font-bold text-blueSelected">ODAQUE</div>
       </div>
       <div className="flex items-center gap-10">
@@ -40,7 +38,7 @@ const Header = () => {
             href={item.href}
             key={uuidv4()}
             className={`font-medium ${
-              active === item.href ? 'text-blueSelected' : 'text-gray-800'
+              active === item.href ? "text-blueSelected" : "text-gray-800"
             }`}
           >
             {item.title}

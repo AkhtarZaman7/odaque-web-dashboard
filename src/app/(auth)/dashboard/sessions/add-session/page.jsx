@@ -97,7 +97,11 @@ const Forms = () => {
                 { required: true, message: "Please enter Session Title!" },
               ]}
             >
-              <Input placeholder="Enter Session's Title" size="large" />
+              <Input
+                // style={{ height: "4rem" }}
+                placeholder="Enter Session's Title"
+                size="large"
+              />
             </Form.Item>
           </Col>
           <Col span={8}>

@@ -42,6 +42,15 @@ import {
   PerformanceIcon as performance,
   WhiteLogoWeb as whitelogo,
   RightArrowIcon as rightarrow,
+  LoginBg as loginbg,
+  LoginBgIcon as login,
+  UserIcon as user,
+  PasswordIcon as password,
+  EyeIcon as eye,
+  EmailIcon as email,
+  SendEmailIcon as sendEmail,
+  LockIcon as lock,
+  CheckIcon as check
 } from "./customIcons";
 
 const AppIcons = {
@@ -88,6 +97,15 @@ const AppIcons = {
   performance,
   whitelogo,
   rightarrow,
+  loginbg,
+  login,
+  user,
+  password,
+  eye,
+  email,
+  sendEmail,
+  lock,
+  check
 };
 
 export default AppIcons;

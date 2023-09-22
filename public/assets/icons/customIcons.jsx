@@ -1,3 +1,4 @@
+import React from "react";
 const CoursesIcon = (props) => {
   return (
     <svg
@@ -707,7 +708,7 @@ const LightIcon = () => {
   );
 };
 
-const NotificationIcon = () => {
+const NotificationIcon = ({ isRedDotVisible }) => {
   return (
     <svg
       width="31"
@@ -722,7 +723,7 @@ const NotificationIcon = () => {
       />
       <path
         d="M24.7664 11.25C26.8481 11.25 28.5357 9.57107 28.5357 7.5C28.5357 5.42893 26.8481 3.75 24.7664 3.75C22.6846 3.75 20.9971 5.42893 20.9971 7.5C20.9971 9.57107 22.6846 11.25 24.7664 11.25Z"
-        fill="#FF5959"
+        fill={isRedDotVisible ? "#FF5959" : "transparent"}
       />
     </svg>
   );
@@ -1508,6 +1509,245 @@ const RightArrowIcon = () => {
     </svg>
   );
 };
+const LoginBg = () => {
+  return (
+    <svg
+      width="860"
+      height="900"
+      viewBox="0 0 860 900"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1983_19268)">
+        <rect width="860" height="900" fill="#0A6EF0" />
+        <circle cx="139" cy="845" r="362" fill="#0460E2" />
+        <circle cx="139" cy="845" r="286" fill="#045ADC" />
+        <circle cx="139" cy="845" r="219" fill="#0256D8" />
+        <path
+          d="M255.81 140C120.838 152.8 29.0316 52 0 0L860 3.5V721.5H763.947C466.53 683.5 516.597 532 578.808 461C615.139 411.167 680.833 291.1 652.963 209.5C618.125 107.5 424.525 124 255.81 140Z"
+          fill="#0460E2"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1983_19268">
+          <rect width="860" height="900" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+const LoginBgIcon = ({ width, height }) => {
+  return (
+    <svg
+    width={width || "66"}
+    height={height || "66"}
+      viewBox="0 0 66 66"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_2044_15376)">
+        <path
+          d="M30.4219 26.1937C30.5637 26.5289 30.3832 26.9027 30.0352 27.0059C29.3648 27.1992 28.6688 27.3023 27.9469 27.3023C26.9027 27.3023 25.923 27.109 25.0207 26.7352C24.8918 26.6836 24.7629 26.632 24.634 26.5676C24.6211 26.5676 24.6082 26.5547 24.5953 26.5547C22.0945 25.4977 19.2457 24.8918 16.2164 24.8918C13.432 24.8918 10.8023 25.3945 8.46914 26.2969C8.00508 26.4773 7.47656 26.4258 7.06406 26.1293C5.80078 25.2141 4.24102 24.6727 2.56523 24.6727C1.66289 24.6727 0.799219 24.8273 0 25.1109V16.5C0 14.5793 0.335156 12.723 0.941016 11.0086C3.19688 4.58906 9.30703 0 16.5 0H19.3488L30.4219 26.1937Z"
+          fill="url(#paint0_linear_2044_15376)"
+        />
+        <path
+          d="M50.5957 65.9609C50.2348 65.9867 49.8738 65.9996 49.5 65.9996H16.5C7.38633 65.9996 0 58.6133 0 49.4996V36.957C2.43633 37.434 5.02734 37.7949 7.73438 38.027C9.97734 38.2203 12.3105 38.3234 14.6953 38.3234C17.4023 38.3234 20.0449 38.1945 22.5715 37.9496L50.5957 65.9609Z"
+          fill="url(#paint1_linear_2044_15376)"
+        />
+        <path
+          d="M66 16.5V49.5C66 54.0633 64.1566 58.1883 61.166 61.166L35.4363 35.4363C37.7695 34.7016 39.8707 33.8508 41.6883 32.8969C41.7012 32.884 41.727 32.884 41.7398 32.8711L41.959 32.7551C43.0676 32.1105 43.8152 30.9117 43.8152 29.5453C43.8152 28.8363 43.6219 28.1789 43.2738 27.6117L33.593 12.1688L25.9746 0H49.5C58.6137 0 66 7.38633 66 16.5Z"
+          fill="url(#paint2_linear_2044_15376)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_2044_15376"
+          x1="-16.0716"
+          y1="47.751"
+          x2="50.9197"
+          y2="-15.7968"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1733E3" />
+          <stop offset="1" stop-color="#4FB6FD" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_2044_15376"
+          x1="5.37312"
+          y1="70.3574"
+          x2="72.3644"
+          y2="6.80959"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1733E3" />
+          <stop offset="1" stop-color="#4FB6FD" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_2044_15376"
+          x1="3.60683"
+          y1="68.4958"
+          x2="70.5981"
+          y2="4.94797"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1733E3" />
+          <stop offset="1" stop-color="#4FB6FD" />
+        </linearGradient>
+        <clipPath id="clip0_2044_15376">
+          <rect width="66" height="66" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+const UserIcon = ({ fill }) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 20V19C5 16.2386 7.23858 14 10 14H14C16.7614 14 19 16.2386 19 19V20M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+        stroke={fill || "#C0C0C5"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+const PasswordIcon = ({ fill }) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill={fill || "#C0C0C5"}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 12C20 10.897 19.103 10 18 10H17V7C17 4.243 14.757 2 12 2C9.243 2 7 4.243 7 7V10H6C4.897 10 4 10.897 4 12V20C4 21.103 4.897 22 6 22H18C19.103 22 20 21.103 20 20V12ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7Z"
+        fill={fill || "#C0C0C5"}
+      />
+    </svg>
+  );
+};
+const EyeIcon = ({ fill }) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill={fill || "#C0C0C5"}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17.7423 10.593L18.4852 10.8899L17.7423 10.593ZM2.26033 10.593L1.51748 10.8899L2.26033 10.593ZM3.00317 9.70658C4.11375 6.92839 6.82956 4.96797 10.0013 4.96797V3.36797C6.15312 3.36797 2.86266 5.74761 1.51748 9.11268L3.00317 9.70658ZM10.0013 4.96797C13.1731 4.96797 15.8889 6.92839 16.9995 9.70659L18.4852 9.11269C17.14 5.74761 13.8495 3.36797 10.0013 3.36797V4.96797ZM16.9995 10.296C15.8889 13.0742 13.1731 15.0346 10.0013 15.0346V16.6346C13.8495 16.6346 17.14 14.255 18.4852 10.8899L16.9995 10.296ZM10.0013 15.0346C6.82956 15.0346 4.11375 13.0742 3.00317 10.296L1.51748 10.8899C2.86266 14.255 6.15312 16.6346 10.0013 16.6346V15.0346ZM16.9995 9.70659C17.0751 9.89567 17.0751 10.1069 16.9995 10.296L18.4852 10.8899C18.7132 10.3196 18.7132 9.68303 18.4852 9.11269L16.9995 9.70659ZM1.51748 9.11268C1.28949 9.68303 1.28949 10.3196 1.51748 10.8899L3.00317 10.296C2.92759 10.1069 2.92759 9.89566 3.00317 9.70658L1.51748 9.11268Z"
+        fill={fill || "#C0C0C5"}
+      />
+      <circle
+        cx="10"
+        cy="10"
+        r="2.5"
+        fill={fill || "#C0C0C5"}
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+const SendEmailIcon = ({ fill }) => {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8 14.0001L22.2 24.6501C23.2667 25.4501 24.7333 25.4501 25.8 24.6501L40 14"
+        stroke="#0A6EF0"
+        stroke-width="3.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="6"
+        y="10"
+        width="36"
+        height="28"
+        rx="2"
+        stroke="#0A6EF0"
+        stroke-width="3.7"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+const EmailIcon = ({ fill }) => {
+  return (
+    <svg
+      width="20"
+      height="24"
+      viewBox="0 0 22 16"
+      fill={fill || "#C0C0C5"}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.5 1.25L1.25 0.5H20.75L21.5 1.25V14.75L20.75 15.5H1.25L0.5 14.75V1.25ZM2 2.8025V14H20V2.804L11.465 9.35H10.55L2 2.8025ZM18.545 2H3.455L11 7.8035L18.545 2Z"
+        fill={fill || "#C0C0C5"}
+      />
+    </svg>
+  );
+};
+
+const LockIcon = ({ fill }) => {
+  return (
+    <svg
+      width="49"
+      height="48"
+      viewBox="0 0 49 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32.75 18V12C32.75 8.68629 30.0637 6 26.75 6H22.75C19.4363 6 16.75 8.68629 16.75 12V18M32.75 18H16.75M32.75 18C36.0637 18 38.75 20.6863 38.75 24V36C38.75 39.3137 36.0637 42 32.75 42H16.75C13.4363 42 10.75 39.3137 10.75 36V24C10.75 20.6863 13.4363 18 16.75 18M24.75 28V34M26.75 28C26.75 29.1046 25.8546 30 24.75 30C23.6454 30 22.75 29.1046 22.75 28C22.75 26.8954 23.6454 26 24.75 26C25.8546 26 26.75 26.8954 26.75 28Z"
+        stroke={fill || "#0A6EF0"}
+        stroke-width="3.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+const CheckIcon = ({ fill }) => {
+  return (
+    <svg
+      width="45"
+      height="44"
+      viewBox="0 0 45 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.83984 23.5439L17.0761 30.7802L35.1668 12.6895"
+        stroke="white"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 export {
   CancelledIcon,
   CompletedIcon,
@@ -1552,4 +1792,13 @@ export {
   PerformanceIcon,
   WhiteLogoWeb,
   RightArrowIcon,
+  LoginBg,
+  LoginBgIcon,
+  UserIcon,
+  PasswordIcon,
+  EyeIcon,
+  EmailIcon,
+  SendEmailIcon,
+  LockIcon,
+  CheckIcon
 };

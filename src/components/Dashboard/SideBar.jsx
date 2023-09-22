@@ -22,9 +22,14 @@ export default function SideBar(props) {
   const path = usePathname();
   const [lightMode, setLightMode] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isRedDotVisible, setRedDotVisible] = useState(true);
 
   const toggleDropdown = () => {
-    setIsDropdownVisible(!isDropdownVisible);
+    setIsDropdownVisible((prevVisible) => !prevVisible);
+    setRedDotVisible(true);
+  };
+  const toggleRedDot = () => {
+    setRedDotVisible((prevVisible) => !prevVisible);
   };
 
   const handleLightModeToggle = () => {
@@ -141,7 +146,7 @@ export default function SideBar(props) {
                               className={`font-inter font-semibold ${
                                 isSelected(text).selected
                                   ? "text-white"
-                                  : "#5b5f77"
+                                  : "text-descriptiontext"
                               } rounded-md `}
                             />
                           </ListItemButton>
@@ -190,7 +195,7 @@ export default function SideBar(props) {
                             className={`font-inter font-semibold ${
                               isSelected(text).selected
                                 ? "text-white"
-                                : "#5b5f77"
+                                : "text-descriptiontext"
                             } rounded-md `}
                           />
                         </ListItemButton>
@@ -208,7 +213,9 @@ export default function SideBar(props) {
                 <div className="pt-1">
                   <AppIcons.Light />
                 </div>
-                <p className="ml-6 pt-1 font-inter">Light mode</p>
+                <p className="ml-6 pt-1 font-inter text-descriptiontext">
+                  Light mode
+                </p>
                 <div
                   className={`h-8 w-14 items-center rounded-full bg-globalBackground p-1 ${
                     lightMode ? "bg-green-500" : ""
@@ -243,10 +250,13 @@ export default function SideBar(props) {
           <button
             type="button"
             className=" flex items-center justify-center"
-            onClick={toggleDropdown}
+            onClick={() => {
+              toggleDropdown();
+              toggleRedDot();
+            }}
           >
             <div className="relative">
-              <AppIcons.Notification />
+              <AppIcons.Notification isRedDotVisible={isRedDotVisible} />
               {isDropdownVisible && <NotificationDropdown />}
             </div>
           </button>
