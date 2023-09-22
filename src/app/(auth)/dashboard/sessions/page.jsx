@@ -1,7 +1,3 @@
-"use client";
-
-
-
 import SessionActivityDetails from "../../../../components/SessionActivityDetails";
 import SessionHistory from "../../../../components/SessionsHistory";
 import AppIcons from "../../../../../public/assets/icons";
