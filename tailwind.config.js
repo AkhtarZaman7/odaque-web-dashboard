@@ -22,6 +22,9 @@ module.exports = {
       sora: ["Sora", "sans"],
       inter: ["Inter", "sans"],
       monaSans: ["Mona Sans", "sans"],
+      sans: ["Open Sans", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
     },
     fontWeight: {
       bolder: "1000",
@@ -64,6 +67,7 @@ module.exports = {
         unselected: "#a9b2cf",
         blueSelected: "#0A6EF0",
         globalBackground: "#CAD2E6",
+        bgSignUp:"#f5f5f6",
         lightmode: "#53659E",
         lightgray: "#f4f7fe",
         border: "#e3eaf7",
@@ -78,6 +82,14 @@ module.exports = {
         hover: "#eaf6ff",
         borderb: "#0D7CFF",
         star: "#FF8C00",
+        blackSecondary: "#353745",
+        editText: "#efa037",
+        editBg: "#fff4e8",
+        primaryBg: "#eaf6ff",
+        error:"#FF453A",
+        lockbg:"#fff2f1",
+        checkbg:"#27AE60"
+        
       },
     },
   },

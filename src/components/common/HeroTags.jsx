@@ -1,23 +1,20 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
-import { AiOutlineCheck } from 'react-icons/ai';
 
-import gymIcon from '../../../public/assets/images/gym_icon.png';
+import React from "react";
+
+import AppIcons from "../../../public/assets/icons";
 
 const HeroTags = ({ text }) => {
   let iconToRender;
 
   switch (text) {
-    case 'Gym Courses':
-      iconToRender = (
-        <Image src={gymIcon} alt="Gym Icon" width={20} height={20} />
-      );
+    case "Gym Courses":
+      iconToRender = <AppIcons.gym />;
       break;
     // Add more cases for other text values if needed
     default:
-      iconToRender = <AiOutlineCheck />;
+      iconToRender = <AppIcons.tick/>;
       break;
   }
 

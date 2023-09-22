@@ -1,44 +1,45 @@
 "use client";
 
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
-
-import Access from "../../public/assets/images/Accessiblility.png";
-import Performance from "../../public/assets/images/Analytics_.png";
-import Expert from "../../public/assets/images/ExpertIns.png";
-import CourseMng from "../../public/assets/images/Management.png";
-import Engage from "../../public/assets/images/Member.png";
-import Session from "../../public/assets/images/Scheduling.png";
+import AppIcons from "../../public/assets/icons";
 
 const Advantages = () => {
+  const iconComponents = [
+    AppIcons.expert,
+    AppIcons.member,
+    AppIcons.coursemanage,
+    AppIcons.accessibility,
+    AppIcons.scheduling,
+    AppIcons.performance,
+  ];
   const columnData1 = [
     {
-      imageSrc: Expert.src,
+      imageSrc: iconComponents[0],
       title: "Expert Instructors",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
     {
-      imageSrc: Engage.src,
+      imageSrc: iconComponents[1],
       title: "Member Engagement",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
     {
-      imageSrc: CourseMng.src,
+      imageSrc: iconComponents[2],
       title: "Course Management",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
     {
-      imageSrc: Access.src,
+      imageSrc: iconComponents[3],
       title: "Accessibility",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
     {
-      imageSrc: Session.src,
+      imageSrc: iconComponents[4],
       title: "Session Scheduling",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
     {
-      imageSrc: Performance.src,
+      imageSrc: iconComponents[5],
       title: "Performance Analytics",
       description: "Sed rhoncus bibendum sapien,eu congues metus congue vitae.",
     },
@@ -56,17 +57,11 @@ const Advantages = () => {
         </div>
 
         <div className="mt-0 grid grid-cols-2 gap-4">
-          {columnData1.map((item) => (
-            <div key={uuidv4()} className="p-4 pt-0">
+          {columnData1.map((item, index) => (
+            <div key={index.toString()} className="p-4 pt-0">
               <div className="mb-4 ">
-                <img
-                  src={item.imageSrc}
-                  alt={item.title}
-                  width={60}
-                  height={60}
-                  className="mb-2"
-                />
-                <h2 className="mt-5 text-lg font-semibold">{item.title}</h2>
+                {item.imageSrc && <item.imageSrc />}
+                <h2 className=" text-lg mt-7 font-semibold">{item.title}</h2>
                 <p className="mt-4 text-gray-600">{item.description}</p>
               </div>
             </div>

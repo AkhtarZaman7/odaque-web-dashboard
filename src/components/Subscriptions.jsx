@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import AppIcons from '../../public/assets/icons';
 
 import checkBlue from '../../public/assets/images/check_blue.png';
 import checkWhite from '../../public/assets/images/check_white.png';
@@ -134,9 +135,10 @@ const Subscriptions = () => {
                       } mr-2`}
                     >
                       {clickedIndex === index ? (
-                        <Image src={checkBlue} alt="whiteCheck" />
+                        <AppIcons.whitetick/>
+                        
                       ) : (
-                        <Image src={checkWhite} alt="blueCheck" />
+                        <AppIcons.bluetick/>
                       )}
                     </div>
                     <span>{instruction}</span>
