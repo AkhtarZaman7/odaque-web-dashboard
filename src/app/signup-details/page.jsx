@@ -1,6 +1,6 @@
 "use client";
-import DetailsHeader from "../../../components/SignUpDetailsHeader";
-import AppIcons from "../../../../public/assets/icons";
+import DetailsHeader from "../../components/SignUpDetailsHeader";
+
 const Details = () => {
   return (
     <div className="h-screen w-full bg-bgSignUp">
