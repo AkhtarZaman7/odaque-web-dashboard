@@ -50,7 +50,10 @@ import {
   EmailIcon as email,
   SendEmailIcon as sendEmail,
   LockIcon as lock,
-  CheckIcon as check
+  CheckIcon as check,
+  TickCheckIcon as tickicon,
+  CameraIcon as camera,
+  SignUpDoneSvg as signupdone
 } from "./customIcons";
 
 const AppIcons = {
@@ -105,7 +108,10 @@ const AppIcons = {
   email,
   sendEmail,
   lock,
-  check
+  check,
+  tickicon,
+  camera,
+  signupdone
 };
 
 export default AppIcons;

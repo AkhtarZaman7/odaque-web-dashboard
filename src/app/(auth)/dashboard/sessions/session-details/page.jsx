@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import AppIcons from "../../../../../../public/assets/icons";
 import Link from "next/link";
-import fitnessPicture from "../../../../../../public/assets/images/fitnesspicture.png";
-import profilePicture from "../../../../../../public/assets/images/profilepicture.png";
+
 import Button from "../../../../../components/common/Button";
 import { useSearchParams } from "next/navigation";
 import { SessionDetails as details } from "../../../../../components/common/dummy";
@@ -14,29 +13,7 @@ import { SessionDetails as details } from "../../../../../components/common/dumm
 const SessionDetails = ({}) => {
   const searchParams = useSearchParams();
   const item = details[searchParams.get("id") - 1];
-  // item = item + 1;
-
-  // const SessionItem    = [
-  //   {
-  //     id: 1,
-  //     picture: fitnessPicture.src,
-  //     title: "Lorem Ipsum",
-  //     price: "$10.0",
-  //     date: "22 Nov - 30 Nov",
-  //     category: "Fitness Gym",
-  //     rating: 15,
-  //     details:
-  //       "High-Intensity Interval Training (HIIT) Cardio, Boost your fitness and torch calories",
-  //     description:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit",
-  //     profilePicture: profilePicture.src,
-  //     Name: "Jane Cooper",
-  //     edit: "Edit",
-  //     studio: "Studio A",
-  //     startDate: "September 26, 2023",
-  //     endDate: "November 06, 2023",
-  //   },
-  // ];
+ 
 
   const Icon = AppIcons.plus;
   return (
