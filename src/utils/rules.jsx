@@ -9,40 +9,23 @@ export const RULES = {
         </span>
       ),
     },
-    {
-      pattern: /^[A-Za-z]+$/,
-      message: (
-        <span className="text-red-500 text-xs font-roboto">
-          Full Name should contain only alphabetic characters
-        </span>
-      ),
-    },
-    {
-      validator: (_, value) => {
-        // Check if the name is already registered
-        if (value === "John Doe") {
-          return Promise.reject(
-            <span className="text-red-500 text-xs font-roboto">
-              This name is already registered! Try a new one
-            </span>
-          );
-        }
-        return Promise.resolve();
-      },
-    },
   ],
   email: [
+    // {
+    //   validator: (_, value) => {
+    //     if (!value || isEmailValid(value)) {
+    //       return Promise.resolve();
+    //     }
+    //     return Promise.reject(
+    //       <span className="text-xs font-roboto">
+    //         Please enter a valid email address!
+    //       </span>
+    //     );
+    //   },
+    // },
     {
-      validator: (_, value) => {
-        if (!value || isEmailValid(value)) {
-          return Promise.resolve();
-        }
-        return Promise.reject(
-          <span className="text-xs font-roboto">
-            Please enter a valid email address!
-          </span>
-        );
-      },
+      type: "email",
+      message: "Please enter your correct email",
     },
     {
       required: true,
@@ -66,7 +49,7 @@ export const RULES = {
       ),
     },
     {
-      pattern: /^(?=.*[0-9]).{6,}$/,
+      pattern: /^(?=.*[0-9]).{8,}$/,
       message: (
         <span className=" text-red-500 text-xs font-roboto">
           Must Include at least one number
@@ -131,5 +114,31 @@ export const RULES = {
         return Promise.reject(new Error("The two passwords do not match"));
       },
     }),
+  ],
+  address: [
+    {
+      required: true,
+      message: "Please enter Address!",
+    },
+  ],
+  location: [
+    {
+      required: true,
+      message: "Please enter Location!",
+    },
+  ],
+  city: [{ required: true, message: "Please choose City!" }],
+  zipcode: [
+    {
+      required: true,
+      message: "Please enter ZipCode!",
+    },
+  ],
+  studiotype: [{ required: true, message: "Please select Studio!" }],
+  contactno: [
+    {
+      required: true,
+      message: "Please enter Contact No!",
+    },
   ],
 };

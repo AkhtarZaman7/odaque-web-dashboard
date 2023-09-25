@@ -24,7 +24,7 @@ export const PREFIX = {
   ),
   fullnameprefix: ({ svgFillStyle, isUserFocused }) => (
     <div className="mr-[4px]">
-      <AppIcons.user fill={svgFillStyle(isUserFocused).fill} />
+      <AppIcons.email fill={svgFillStyle(isUserFocused).fill} />
     </div>
   ),
   loginpasswordprefix: ({ svgFillStyle, isFocused }) => (
