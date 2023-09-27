@@ -53,7 +53,13 @@ import {
   CheckIcon as check,
   TickCheckIcon as tickicon,
   CameraIcon as camera,
-  SignUpDoneSvg as signupdone
+  SignUpDoneSvg as signupdone,
+  CurrentLocationIcon as currentlocation,
+  barbellIcon as barbell,
+  DollarIcon as dollar,
+  DropDownIcon as dropdown,
+  VideoIcon as video,
+  VideoPlayIcon as play
 } from "./customIcons";
 
 const AppIcons = {
@@ -111,7 +117,13 @@ const AppIcons = {
   check,
   tickicon,
   camera,
-  signupdone
+  dollar,
+  barbell,
+  currentlocation,
+  signupdone,
+  dropdown,
+  video,
+  play
 };
 
 export default AppIcons;

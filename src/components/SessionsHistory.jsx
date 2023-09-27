@@ -16,12 +16,15 @@ const iconComponents = [
   AppIcons.star,
 ];
 
-const SessionHistory = () => {
+const SessionHistory = (props) => {
+  const { coursesHistory } = props;
+
   const AllSessions = [
     {
       id: 1,
       sessions: "34,146",
       history: "Held sessions",
+
       text: "down",
       details: "-0.91% this Month",
       ratio: "2.56",
@@ -59,11 +62,18 @@ const SessionHistory = () => {
       direction: iconComponents[4],
     },
   ];
+  const modifiedSessions = coursesHistory
+    ? coursesHistory.map((overrideFields, index) => {
+        // Merge with AllSessions or use defaults if no overrides
+        const session = { ...AllSessions[index], ...overrideFields };
+        return session;
+      })
+    : AllSessions;
 
   return (
     <div>
       <div className=" grid h-28 grid-cols-4 gap-14 rounded bg-white p-4 pt-2">
-        {AllSessions.map((session) => (
+        {modifiedSessions.map((session) => (
           <div
             key={session.id}
             className="flex flex-col rounded-md font-montserrat  "

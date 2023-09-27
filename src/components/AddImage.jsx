@@ -1,16 +1,6 @@
 "use client";
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  message,
-  Row,
-  Select,
-  Upload,
-} from "antd";
-import React, { useState } from "react";
+import { Col, message, Upload } from "antd";
+import React, from "react";
 import AppIcons from "../../public/assets/icons";
 
 const AddImage = () => {
@@ -42,11 +32,7 @@ const AddImage = () => {
       <p className="mb-1 font-inter">
         Upload Image<span className="pl-1 text-xs text-red-500">*</span>
       </p>
-      <Dragger
-        {...props}
-        className="bg-white pt-[40px] pb-[40px]"
-       
-      >
+      <Dragger {...props} style={{ backgroundColor: "white", color: "black" }} className=" pt-[40px] pb-[40px]">
         <div className="flex items-center justify-center">
           <AppIcons.camera />
         </div>

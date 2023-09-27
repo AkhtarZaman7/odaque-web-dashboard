@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import AppIcons from "../../public/assets/icons";
 const SignUpDone = () => {

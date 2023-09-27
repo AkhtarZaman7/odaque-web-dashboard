@@ -165,7 +165,7 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div className="pt-[15px]">
-                  <Link href="/sign-up/details">
+                  <Link href="/signup-details">
                     <button
                       type="primary"
                       className="w-[20rem] h-12 flex justify-center items-center bg-blueSelected rounded-md"

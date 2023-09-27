@@ -511,25 +511,25 @@ const UpIcon = () => {
   );
 };
 
-const PlusIcon = () => {
+const PlusIcon = ({ fill }) => {
   return (
     <svg
       width="16"
       height="16"
       viewBox="0 0 16 16"
-      fill="none"
+      fill={fill || "none"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M2.5 8H13.5"
-        stroke="white"
+        stroke={fill || "white"}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M8 2.5V13.5"
-        stroke="white"
+        stroke={fill || "white"}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -550,6 +550,23 @@ const StarIcon = () => {
       <path
         d="M8.0293 0.5L10.5862 4.48078L15.1622 5.68237L12.1664 9.34422L12.4377 14.0676L8.0293 12.35L3.62091 14.0676L3.8922 9.34422L0.896373 5.68237L5.47243 4.48078L8.0293 0.5Z"
         fill="#F2C94C"
+      />
+    </svg>
+  );
+};
+const VideoIcon = () => {
+  return (
+    <svg
+      width="70"
+      height="70"
+      viewBox="0 0 70 70"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M40.8855 25.1678L40.8851 25.1676L31.9896 20.0319C31.9896 20.0319 31.9896 20.0319 31.9896 20.0319C31.1561 19.5509 30.1146 20.1522 30.1146 21.1144V31.3857C30.1146 32.3479 31.1561 32.9493 31.9896 32.4682C31.9896 32.4682 31.9896 32.4682 31.9896 32.4682L40.8851 27.3326L40.8852 27.3325C41.6117 26.9133 41.7075 25.9392 41.1607 25.3803L41.1603 25.38C41.0831 25.3009 40.9918 25.229 40.8855 25.1678ZM12.6354 11.6667V11.1667H13.1354L56.8854 11.1667H57.3854V11.6667L57.3854 40.8333V41.3333H56.8854H13.1354H12.6354V40.8333L12.6354 11.6667ZM15.0937 57.6042C15.0937 59.3416 16.5022 60.75 18.2396 60.75L51.7812 60.75C53.5188 60.75 54.9271 59.3416 54.9271 57.6042C54.9271 55.8667 53.5188 54.4583 51.7812 54.4583L18.2396 54.4583C16.5022 54.4583 15.0937 55.8668 15.0937 57.6042ZM6.34375 42.2917C6.34375 45.2372 8.73156 47.625 11.6771 47.625L58.3437 47.625C61.2893 47.625 63.6771 45.2372 63.6771 42.2917L63.6771 10.2083C63.6771 7.26273 61.2893 4.875 58.3437 4.875L11.6771 4.875C8.73156 4.875 6.34375 7.26273 6.34375 10.2083L6.34375 42.2917Z"
+        fill="#C0C0C5"
+        stroke="white"
       />
     </svg>
   );
@@ -2570,7 +2587,210 @@ const SignUpDoneSvg = ({ fill }) => {
     </svg>
   );
 };
-
+const CurrentLocationIcon = ({ fill }) => {
+  return (
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.5 15C14.1569 15 15.5 13.6569 15.5 12C15.5 10.3431 14.1569 9 12.5 9C10.8431 9 9.5 10.3431 9.5 12C9.5 13.6569 10.8431 15 12.5 15Z"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.5 20C16.9183 20 20.5 16.4183 20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20Z"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.5 2V4"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.5 20V22"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.5 12H22.5"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M2.5 12H4.5"
+        stroke="#353745"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+const barbellIcon = ({ fill, height, width }) => {
+  return (
+    <svg
+      width={width || "25"}
+      height={height || "24"}
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1784_13490)">
+        <path
+          d="M8.83203 5H4.83203V19H8.83203V5Z"
+          stroke="#353745"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.83203 7H1.83203V17H4.83203"
+          stroke="#353745"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16.832 5H20.832V19H16.832V5Z"
+          stroke="#353745"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M20.832 7H23.832V17H20.832"
+          stroke="#353745"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M8.83203 12H16.832"
+          stroke="#353745"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1784_13490">
+          <rect
+            width="24"
+            height="24"
+            fill="white"
+            transform="translate(0.832031)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+const DollarIcon = ({ fill }) => {
+  return (
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1784_13499)">
+        <path
+          d="M12.168 24C8.96266 24 5.94916 22.7518 3.68266 20.4853C1.41616 18.2188 0.167969 15.2053 0.167969 12C0.167969 8.79469 1.4162 5.78123 3.68266 3.51469C5.94911 1.24814 8.96266 0 12.168 0C15.3733 0 18.3868 1.24819 20.6533 3.51469C22.9198 5.78119 24.168 8.79469 24.168 12C24.168 15.2053 22.9197 18.2188 20.6533 20.4853C18.3868 22.7519 15.3733 24 12.168 24ZM12.168 1.5C6.37825 1.5 1.66797 6.21028 1.66797 12C1.66797 17.7897 6.37825 22.5 12.168 22.5C17.9577 22.5 22.668 17.7897 22.668 12C22.668 6.21028 17.9577 1.5 12.168 1.5Z"
+          fill="#353745"
+        />
+        <path
+          d="M12.168 11.25C11.1341 11.25 10.293 10.4089 10.293 9.375C10.293 8.34113 11.1341 7.5 12.168 7.5C13.2018 7.5 14.043 8.34113 14.043 9.375C14.043 9.78919 14.3787 10.125 14.793 10.125C15.2072 10.125 15.543 9.78919 15.543 9.375C15.543 7.77183 14.419 6.42712 12.918 6.08503V5.25C12.918 4.83581 12.5822 4.5 12.168 4.5C11.7537 4.5 11.418 4.83581 11.418 5.25V6.08503C9.91694 6.42712 8.79297 7.77183 8.79297 9.375C8.79297 11.236 10.307 12.75 12.168 12.75C13.2018 12.75 14.043 13.5911 14.043 14.625C14.043 15.6589 13.2018 16.5 12.168 16.5C11.1341 16.5 10.293 15.6589 10.293 14.625C10.293 14.2108 9.9572 13.875 9.54297 13.875C9.12873 13.875 8.79297 14.2108 8.79297 14.625C8.79297 16.2282 9.91694 17.5729 11.418 17.915V18.75C11.418 19.1642 11.7537 19.5 12.168 19.5C12.5822 19.5 12.918 19.1642 12.918 18.75V17.915C14.419 17.5729 15.543 16.2282 15.543 14.625C15.543 12.764 14.029 11.25 12.168 11.25Z"
+          fill="#353745"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1784_13499">
+          <rect
+            width="24"
+            height="24"
+            fill="white"
+            transform="translate(0.167969)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+const DropDownIcon = ({ fill }) => {
+  return (
+    <svg
+      width="11"
+      height="7"
+      viewBox="0 0 11 7"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.91805 0.999923L5.50388 4.58574L9.08968 0.999923C9.48018 0.609403 10.1133 0.609403 10.5039 0.999923C10.5527 1.04874 10.5954 1.10134 10.632 1.15684C10.8883 1.54494 10.8456 2.07244 10.5039 2.41414L6.21098 6.70704C6.02338 6.89454 5.76908 6.99994 5.50388 6.99994C5.23858 6.99994 4.98428 6.89454 4.79678 6.70704L0.503828 2.41414C0.113308 2.02364 0.113308 1.39044 0.503828 0.999923C0.552648 0.951113 0.605257 0.908394 0.660707 0.871784C1.04886 0.615504 1.57634 0.658213 1.91805 0.999923Z"
+        fill="#353745"
+      />
+    </svg>
+  );
+};
+const VideoPlayIcon = ({ fill }) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_f_1773_12935)">
+        <circle cx="16" cy="16" r="14" fill="white" fill-opacity="0.5" />
+      </g>
+      <circle cx="15.7152" cy="15.7152" r="9.82457" fill="white" />
+      <path
+        d="M19.8902 16.2581L13.668 21.1841V11.332L19.8902 16.2581Z"
+        fill="#0A6EF0"
+      />
+      <defs>
+        <filter
+          id="filter0_f_1773_12935"
+          x="0.2"
+          y="0.2"
+          width="31.6"
+          height="31.6"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="0.9"
+            result="effect1_foregroundBlur_1773_12935"
+          />
+        </filter>
+      </defs>
+    </svg>
+  );
+};
 export {
   CancelledIcon,
   CompletedIcon,
@@ -2626,5 +2846,11 @@ export {
   CheckIcon,
   TickCheckIcon,
   CameraIcon,
-  SignUpDoneSvg
+  SignUpDoneSvg,
+  CurrentLocationIcon,
+  barbellIcon,
+  DollarIcon,
+  DropDownIcon,
+  VideoIcon,
+  VideoPlayIcon
 };

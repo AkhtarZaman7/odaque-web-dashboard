@@ -88,7 +88,8 @@ module.exports = {
         primaryBg: "#eaf6ff",
         error:"#FF453A",
         lockbg:"#fff2f1",
-        checkbg:"#27AE60"
+        checkbg:"#27AE60",
+        secondary:"#020517",
         
       },
     },

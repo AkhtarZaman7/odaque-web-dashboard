@@ -94,7 +94,13 @@ const SessionActivityDetails = () => {
 
                 <div className="flex flex-row items-center rounded-lg ">
                   <div className="rounded-lg bg-statusBg">
-                    <p className="px-2 py-1 text-sm font-semibold text-statusColor font-inter">
+                    <p
+                      className={`px-2 py-1 text-sm font-semibold ${
+                        item.status == "Active"
+                          ? "text-statusColor"
+                          : "text-error"
+                      }  font-inter`}
+                    >
                       {item.status}
                     </p>
                   </div>
