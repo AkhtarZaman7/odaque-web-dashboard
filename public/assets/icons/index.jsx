@@ -56,6 +56,9 @@ import {
   SignUpDoneSvg as signupdone,
   SubscribersIcon as subscribers,
   SubscriptionsIcon as subscription,
+  DeleteIcon as deleteicon,
+  EditIcon as edit,
+
 } from "./customIcons";
 
 const AppIcons = {
@@ -116,6 +119,8 @@ const AppIcons = {
   tickicon,
   camera,
   signupdone,
+  edit,
+  deleteicon
 };
 
 export default AppIcons;
