@@ -1,17 +1,46 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppIcons from "../../../public/assets/icons";
 import { Input, Form, Checkbox } from "antd";
+import { createUser } from "../../redux/user/actions";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import AuthPreview from "../../components/AuthPreview";
 import { RULES } from "../../utils/rules";
 import { PREFIX } from "../../utils/prefix";
+import Cookies from "js-cookie";
 
 const SignUp = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [isConfirmFocused, setIsConfirmFocused] = useState(false);
   const [isUserFocused, setIsUserFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.userReducer.loading);
+  const userR = useSelector((state) => state.userReducer.user);
+  console.log(userR);
+  const router = useRouter();
+  useEffect(() => {
+    const token = Cookies.get("token");
+    console.log("the token we get for sign up is: ", token);
+  }, []);
+  const handleInputChange = (value, inputName) => {
+    setUserData({
+      ...userData,
+      [inputName]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    if (e && typeof e.preventDefault === "function") {
+      e.preventDefault();
+    }
+    dispatch(createUser(userData));
+  };
 
   const handleUserFocus = () => {
     setIsUserFocused(true);
@@ -49,14 +78,16 @@ const SignUp = () => {
   const onFinish = (values) => {
     console.log("Received values:", values);
   };
-  return (
+  return userR?.token ? (
+    router.push("/signup-details")
+  ) : (
     <div className=" grid grid-cols-[60%_40%] h-full">
       <AuthPreview />
 
       <div className="flex items-center justify-center">
         <Form
           name="signup"
-          onFinish={onFinish}
+          onFinish={handleSubmit}
           initialValues={{ remember: true }}
         >
           <div className="w-[20rem] flex flex-col  ">
@@ -89,46 +120,41 @@ const SignUp = () => {
                     />
                   </Form.Item>
 
-                  <Form.Item
-                    className={`font-inter relative m-0 p-0 ${
-                      isUserFocused ? "h-[50px]" : "h-[50px]"
-                    }`}
-                    name="email"
-                    size="small"
-                    rules={RULES.email}
-                  >
-                    <Input
-                      placeholder="Johnsmith123@gmail.com"
-                      className="placeholder:text-xs h-[3rem] pl-[23px] text-black text-sm"
-                      onFocus={handleEmailFocus}
-                      onBlur={handleEmailBlur}
-                      prefix={
-                        <PREFIX.emailprefix
-                          svgFillStyle={svgFillStyle}
-                          isEmailFocused={isEmailFocused}
-                        />
-                      }
-                    />
-                  </Form.Item>
+                  <Input
+                    className="h-[3rem] pl-[23px]"
+                    placeholder="john@gmail.com"
+                    onFocus={handleEmailFocus}
+                    onBlur={handleEmailBlur}
+                    prefix={
+                      <PREFIX.fullnameprefix
+                        svgFillStyle={svgFillStyle}
+                        isUserFocused={isUserFocused}
+                      />
+                    }
+                    value={userData.email}
+                    onChange={(e) => handleInputChange(e.target.value, "email")}
+                  />
 
                   <Form.Item
-                    className={`font-inter relative p-0 m-0 ${
-                      isUserFocused ? "h-[50px]" : "h-[50px]"
-                    }`}
+                    className="font-inter p-0 m-0"
                     name="Password"
                     size="small"
                     rules={RULES.password}
                   >
                     <Input.Password
-                      className="h-[3rem] pr-[23px] pl-[23px]"
+                      className="pr-[23px] pl-[23px] h-[3rem]"
                       placeholder="Password"
                       onFocus={handlePasswordFocus}
                       onBlur={handlePasswordBlur}
                       prefix={
-                        <PREFIX.passwrodprefix
+                        <PREFIX.loginpasswordprefix
                           svgFillStyle={svgFillStyle}
                           isFocused={isFocused}
                         />
+                      }
+                      value={userData.password}
+                      onChange={(e) =>
+                        handleInputChange(e.target.value, "password")
                       }
                     />
                   </Form.Item>
@@ -165,16 +191,14 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div className="pt-[15px]">
-                  <Link href="/sign-up/details">
-                    <button
-                      type="primary"
-                      className="w-[20rem] h-12 flex justify-center items-center bg-blueSelected rounded-md"
-                    >
-                      <p className="font-inter font-bold text-white text-[18px]">
-                        Create Account
-                      </p>
-                    </button>
-                  </Link>
+                  <button
+                    type="primary"
+                    className="w-[20rem] h-12 flex justify-center items-center bg-blueSelected rounded-md"
+                  >
+                    <p className="font-inter font-bold text-white text-[18px]">
+                      Create Account
+                    </p>
+                  </button>
                 </div>
 
                 <div className="mt-8 mb-4 grid grid-cols-[43%_4%_43%] gap-4">

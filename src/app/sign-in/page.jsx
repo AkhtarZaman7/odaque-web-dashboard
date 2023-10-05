@@ -1,16 +1,45 @@
 "use client";
-import React, { useState } from "react";
-import AppIcons from "../../../public/assets/icons";
+import React, { useState, useEffect } from "react";
+
 import { Input, Form, Checkbox, Button } from "antd";
+import { createUser } from "../../redux/user/actions";
+import { useDispatch, useSelector } from "react-redux";
 import ForgotPassword from "../../components/ForgotPassword";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import AuthPreview from "../../components/AuthPreview";
 import { RULES } from "../../utils/rules";
 import { PREFIX } from "../../utils/prefix";
+import Cookies from "js-cookie";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.userReducer.loading);
+  const userR = useSelector((state) => state.userReducer.user);
+  console.log(userR);
+  const router = useRouter();
   const [isFocused, setIsFocused] = useState(false);
   const [isUserFocused, setIsUserFocused] = useState(false);
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+  useEffect(() => {
+    const token = Cookies.get("token");
+    console.log("the token we get is: ", token);
+  }, []);
+  const handleInputChange = (value, inputName) => {
+    setUserData({
+      ...userData,
+      [inputName]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    if (e && typeof e.preventDefault === "function") {
+      e.preventDefault();
+    }
+    dispatch(createUser(userData));
+  };
 
   const handleUserFocus = () => {
     setIsUserFocused(true);
@@ -34,7 +63,9 @@ const SignIn = () => {
     };
   };
 
-  return (
+  return userR?.token ? (
+    router.push("/dashboard")
+  ) : (
     <div className=" grid grid-cols-[60%_40%] h-full">
       <AuthPreview />
 
@@ -45,28 +76,23 @@ const SignIn = () => {
             <p className="pt-0 text-descriptiontext font-inter text-[16px]">
               Welcome Back to ODAQUE
             </p>
-            <Form name="sessionForm">
+            <Form name="sessionForm" onFinish={handleSubmit}>
               <div className="pt-7 flex flex-col gap-4">
                 <div className="flex flex-col gap-4">
-                  <Form.Item
-                    className="font-inter p-0 m-0"
-                    name="email"
-                    size="small"
-                    rules={RULES.email}
-                  >
-                    <Input
-                      className="h-[3rem] pl-[23px]"
-                      placeholder="john@gmail.com"
-                      onFocus={handleUserFocus}
-                      onBlur={handleUserBlur}
-                      prefix={
-                        <PREFIX.fullnameprefix
-                          svgFillStyle={svgFillStyle}
-                          isUserFocused={isUserFocused}
-                        />
-                      }
-                    />
-                  </Form.Item>
+                  <Input
+                    className="h-[3rem] pl-[23px]"
+                    placeholder="john@gmail.com"
+                    onFocus={handleUserFocus}
+                    onBlur={handleUserBlur}
+                    prefix={
+                      <PREFIX.fullnameprefix
+                        svgFillStyle={svgFillStyle}
+                        isUserFocused={isUserFocused}
+                      />
+                    }
+                    value={userData.email}
+                    onChange={(e) => handleInputChange(e.target.value, "email")}
+                  />
                   <Form.Item
                     className="font-inter p-0 m-0"
                     name="Password"
@@ -83,6 +109,10 @@ const SignIn = () => {
                           svgFillStyle={svgFillStyle}
                           isFocused={isFocused}
                         />
+                      }
+                      value={userData.password}
+                      onChange={(e) =>
+                        handleInputChange(e.target.value, "password")
                       }
                     />
                   </Form.Item>
@@ -110,7 +140,7 @@ const SignIn = () => {
                   </Form.Item>
                 </div>
 
-                <div className="mt-8 mb-4 grid grid-cols-[43%_4%_43%] gap-4">
+                <div className="mt- mb-4 grid grid-cols-[43%_4%_43%] gap-4">
                   <div className="pl-3">
                     <div className="border-t border-gray-400"></div>
                   </div>
