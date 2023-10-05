@@ -112,49 +112,53 @@ export default function SideBar(props) {
                     />
                   </ListItemButton>
                 </ListItem>
-                {["Dashboard", "Sessions", "Courses", "Team", "Settings"].map(
-                  (text) => {
-                    const iconKey = text.toLowerCase();
-                    const Icon = AppIcons[iconKey];
-                    return (
-                      <Link
-                        key={uuidv4()}
-                        href={
-                          text === "Dashboard"
-                            ? "/dashboard"
-                            : `/dashboard/${text.toLowerCase()}`
-                        }
+                {[
+                  "Dashboard",
+                  "Sessions",
+                  "Courses",
+                  "Team",
+                  "Subscribers",
+                  "Subscription",
+                  "Settings",
+                ].map((text) => {
+                  const iconKey = text.toLowerCase();
+                  const Icon = AppIcons[iconKey];
+                  return (
+                    <Link
+                      key={uuidv4()}
+                      href={
+                        text === "Dashboard"
+                          ? "/dashboard"
+                          : `/dashboard/${text.toLowerCase()}`
+                      }
+                    >
+                      <ListItem
+                        disablePadding
+                        className={`${
+                          isSelected(text).backgroundColor
+                        } rounded-md font-montserrat`}
                       >
-                        <ListItem
-                          disablePadding
-                          className={`${
-                            isSelected(text).backgroundColor
-                          } rounded-md font-montserrat`}
-                        >
-                          <ListItemButton>
-                            <ListItemIcon>
-                              <Icon
-                                color={
-                                  isSelected(text).selected
-                                    ? "white"
-                                    : "#5b5f77"
-                                }
-                              />
-                            </ListItemIcon>
-                            <ListItemText
-                              primary={text}
-                              className={`font-inter font-semibold ${
-                                isSelected(text).selected
-                                  ? "text-white"
-                                  : "text-descriptiontext"
-                              } rounded-md `}
+                        <ListItemButton>
+                          <ListItemIcon>
+                            <Icon
+                              color={
+                                isSelected(text).selected ? "white" : "#5b5f77"
+                              }
                             />
-                          </ListItemButton>
-                        </ListItem>
-                      </Link>
-                    );
-                  }
-                )}
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={text}
+                            className={`font-inter font-semibold ${
+                              isSelected(text).selected
+                                ? "text-white"
+                                : "text-descriptiontext"
+                            } rounded-md `}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
+                  );
+                })}
               </List>
             </div>
 

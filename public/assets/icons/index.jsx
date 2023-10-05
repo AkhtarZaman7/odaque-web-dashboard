@@ -53,13 +53,17 @@ import {
   CheckIcon as check,
   TickCheckIcon as tickicon,
   CameraIcon as camera,
-  SignUpDoneSvg as signupdone
+  SignUpDoneSvg as signupdone,
+  SubscribersIcon as subscribers,
+  SubscriptionsIcon as subscription,
 } from "./customIcons";
 
 const AppIcons = {
   dashboard,
   courses,
   team,
+  subscribers,
+  subscription,
   settings,
   sessions,
   Logo,
@@ -111,7 +115,7 @@ const AppIcons = {
   check,
   tickicon,
   camera,
-  signupdone
+  signupdone,
 };
 
 export default AppIcons;
