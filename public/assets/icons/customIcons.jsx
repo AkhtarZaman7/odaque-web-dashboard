@@ -2718,6 +2718,34 @@ const EditIcon = (props) => {
   );
 };
 
+const SubscriptionCheckIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="12"
+      viewBox="0 0 16 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14.0015 1.00182L5.00145 9.00182L3.00145 6.00182C2.62829 5.67348 1.42792 5.72323 1.00145 6.00182C0.585644 6.29036 0.74557 7.59389 1.00145 8.00182L3.00145 11.0018C3.23601 11.3401 3.543 12.0018 4.00145 12.0018C4.43858 12.0018 4.76689 11.3401 5.00145 11.0018C5.38527 10.5342 15.0015 2.00182 15.0015 2.00182C15.961 1.08645 14.7691 0.305346 14.0015 1.00182Z"
+        fill="#0A6EF0"
+      />
+    </svg>
+  );
+};
+
+const PlusIconBlue = () => {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.125 10H16.875" stroke="#0A6EF0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 3.125V16.875" stroke="#0A6EF0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+  );
+};
 export {
   CancelledIcon,
   CompletedIcon,
@@ -2777,5 +2805,7 @@ export {
   CameraIcon,
   SignUpDoneSvg,
   DeleteIcon,
-  EditIcon
+  EditIcon,
+  SubscriptionCheckIcon,
+  PlusIconBlue
 };
