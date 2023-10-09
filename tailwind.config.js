@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -67,7 +68,7 @@ module.exports = {
         unselected: "#a9b2cf",
         blueSelected: "#0A6EF0",
         globalBackground: "#CAD2E6",
-        bgSignUp:"#f5f5f6",
+        bgSignUp: "#f5f5f6",
         lightmode: "#53659E",
         lightgray: "#f4f7fe",
         border: "#e3eaf7",
@@ -86,10 +87,10 @@ module.exports = {
         editText: "#efa037",
         editBg: "#fff4e8",
         primaryBg: "#eaf6ff",
-        error:"#FF453A",
-        lockbg:"#fff2f1",
-        checkbg:"#27AE60"
-        
+        error: "#FF453A",
+        lockbg: "#fff2f1",
+        checkbg: "#27AE60",
+        primarygraybg: "#e8e8e8",
       },
     },
   },
