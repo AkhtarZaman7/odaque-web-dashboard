@@ -1,6 +1,10 @@
 import fitnessPicture from "../../../public/assets/images/fitnesspicture.png";
 import profilePicture from "../../../public/assets/images/profilepicture.png";
 import AppIcons from "../../../public/assets/icons";
+import subs1 from "../../../public/assets/images/sessions_subs01.png";
+import subs2 from "../../../public/assets/images/sessions_subs02.png";
+import subs3 from "../../../public/assets/images/sessions_subs02.png";
+
 const iconComponents = [
   AppIcons.completed,
   AppIcons.waiting,
@@ -36,6 +40,11 @@ export const SessionDetails = [
     studio: "Studio A",
     startDate: "September 26, 2023",
     endDate: "November 06, 2023",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
   },
   {
     id: 2,
@@ -60,6 +69,11 @@ export const SessionDetails = [
     studio: "Studio A",
     startDate: "September 26, 2023",
     endDate: "November 06, 2023",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
   },
   {
     id: 3,
@@ -84,6 +98,11 @@ export const SessionDetails = [
     studio: "Studio A",
     startDate: "September 26, 2023",
     endDate: "November 06, 2023",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
   },
   {
     id: 4,
@@ -108,5 +127,10 @@ export const SessionDetails = [
     studio: "Studio A",
     startDate: "September 26, 2023",
     endDate: "November 06, 2023",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
   },
 ];
