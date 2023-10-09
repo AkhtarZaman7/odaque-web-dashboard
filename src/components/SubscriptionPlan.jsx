@@ -9,6 +9,7 @@ const SubscriptionPlan = () => {
       id: 1,
       title: "Basic",
       prices: "$30",
+      planType: "none",
       plans: [
         "Lorem ipsum dolor sit amet",
         "Lorem ipsum dolor sit amet",
@@ -67,13 +68,15 @@ const SubscriptionPlan = () => {
           {subscriptionPlans.map((plan, index) => (
             <div
               className={`bg-blueSelected ${
-                plan?.planType ? " mb-0" : " mb-[6px]"
+                plan?.planType === "Recommended" ? " mb-0" : " mb-[6px]"
               } rounded-2xl`}
             >
               <div
                 key={plan.id}
                 className={`relative h-[76vh] ${
-                  plan?.planType ? "mt-[6px] mb-0" : "mt-0 mb-0"
+                  plan?.planType === "Recommended"
+                    ? "mt-[6px] mb-0"
+                    : "mt-0 mb-0"
                 }  rounded-lg border border-gray-300 p-6  shadow-md bg-white text-black`}
                 onClick={() => handleGridClick(index)}
                 onKeyDown={(e) => {
@@ -87,13 +90,33 @@ const SubscriptionPlan = () => {
                 <div className="bg-white">
                   <div className="bg-white">
                     {" "}
-                    {plan?.planType ? (
-                      <div className="flex flex-row justify-between items-center pb-3">
-                        <div className="px-[16px] py-[7px] bg-playtypebg rounded-lg">
-                          <p className="text-[14px] font-inter font-medium text-playtype">
-                            {plan?.planType}
+                    {plan?.planType === "Recommended" ? (
+                      plan?.planType === "Recommended" ? (
+                        <div className="flex flex-row justify-between items-center pb-3">
+                          <div className="px-[16px] py-[7px] bg-playtypebg rounded-lg">
+                            <p className="text-[14px] font-inter font-medium text-playtype">
+                              {plan?.planType}
+                            </p>
+                          </div>
+
+                          <div className="flex flex-row items-center">
+                            <AppIcons.edit />
+                            <p className="text-[14px] font-inter text-descriptiontext pl-2 font-medium">
+                              Edit
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )
+                    ) : plan?.planType === "none" ? (
+                      <div className="flex flex-row justify-between items-center ">
+                        <div>
+                          <p className="text-xl font-semibold text-black">
+                            {plan.title}
                           </p>
                         </div>
+
                         <div className="flex flex-row items-center">
                           <AppIcons.edit />
                           <p className="text-[14px] font-inter text-descriptiontext pl-2 font-medium">
@@ -105,9 +128,14 @@ const SubscriptionPlan = () => {
                       <div></div>
                     )}
                     <div className=" flex flex-row justify-between items-center">
-                      <p className="text-xl font-semibold text-black">
-                        {plan.title}
-                      </p>
+                      {plan?.planType === "none" ? (
+                        <div></div>
+                      ) : (
+                        <p className="text-xl font-semibold text-black">
+                          {plan.title}
+                        </p>
+                      )}
+
                       {plan?.planType ? (
                         <div></div>
                       ) : (
