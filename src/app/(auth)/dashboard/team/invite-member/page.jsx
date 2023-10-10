@@ -2,7 +2,12 @@
 
 import { Button, Col, Form, Input, Row, Select, Upload } from "antd";
 import React from "react";
-
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
+import "react-notifications/lib/notifications.css";
+import Link from "next/link";
 const { Option } = Select;
 const roles = [
   { value: "Trainer", label: "Trainer" },
@@ -12,6 +17,30 @@ const roles = [
 const InviteMember = () => {
   const onFinish = (values) => {
     console.log("Received values:", values);
+  };
+  const createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case "info":
+          NotificationManager.info("Info message");
+          break;
+        case "success":
+          NotificationManager.success("Success message", "Invitation Sent");
+          break;
+        case "warning":
+          NotificationManager.warning(
+            "Warning message",
+            "Close after 3000ms",
+            3000
+          );
+          break;
+        case "error":
+          NotificationManager.error("Error message", "Click me!", 5000, () => {
+            alert("callback");
+          });
+          break;
+      }
+    };
   };
 
   return (
@@ -102,16 +131,20 @@ const InviteMember = () => {
               </Button>
             </Form.Item>
             <Form.Item>
-              <Button
-                className="flex items-center h-[40px] w-[174px] justify-center text-[16px] bg-blueSelected px-16 py-4 font-inter font-medium text-white"
-                htmlType="submit"
-              >
-                Send Invite
-              </Button>
+              <Link href="./member-detail">
+                <Button
+                  className="flex items-center h-[40px] w-[174px] justify-center text-[16px] bg-blueSelected px-16 py-4 font-inter font-medium text-white"
+                  htmlType="submit"
+                  onClick={createNotification("success")}
+                >
+                  Send Invite
+                </Button>
+              </Link>
             </Form.Item>
           </div>
         </div>
       </Form>
+      <NotificationContainer />
     </div>
   );
 };
