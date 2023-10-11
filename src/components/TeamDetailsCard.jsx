@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import Permissions from "./Permissions";
-const TeamDetailsCard = ({ heading, TeamMembers }) => {
+import Link from "next/link";
+const TeamDetailsCard = ({ heading, TeamMembers, useLink }) => {
   const [activeButton, setActiveButton] = useState(null);
+
   const handleButtonClick = (buttonId) => {
     setActiveButton(activeButton === buttonId ? null : buttonId);
+  };
+  const CardComponent = ({ children }) => {
+    return useLink ? (
+      <Link href="./team/member-detail">{children}</Link>
+    ) : (
+      <>{children}</>
+    );
   };
   return (
     <div className="pt-[12px]">
@@ -39,75 +48,82 @@ const TeamDetailsCard = ({ heading, TeamMembers }) => {
           }}
         >
           {TeamMembers.map((item, index) => (
-            <div
-              key={index}
-              className="py-[12px] px-[12px] flex flex-row items-center border-b"
-              //onClick={() => setActiveButton(null)}
-            >
-              <div className=" w-[10%] font-medium font-sans text-black">
-                <img height="40px" width="40px" src={item.profile} />
-              </div>
-              <div className="w-[16%] font-inter font-light text-[14px] text-descriptionText">
-                <p>{item.MemberName}</p>
-              </div>
-              <div className="w-[17%] bg-white ">
-                <div className="flex items-center">
-                  <div
-                    className={`  py-1 px-[16px] font-inter rounded-lg ${
-                      item.role == "Manager" ? "bg-primaryBg" : "bg-editBg"
-                    }`}
-                  >
-                    <p
-                      className={`text-[14px] ${
-                        item.role === "Manager"
-                          ? "text-blueSelected"
-                          : "text-editText"
+            <CardComponent key={index}>
+              <div
+                key={index}
+                className="py-[12px] px-[12px] flex flex-row items-center border-b"
+                //onClick={() => setActiveButton(null)}
+              >
+                <div className=" w-[10%] font-medium font-sans text-black">
+                  <img height="40px" width="40px" src={item.profile} />
+                </div>
+                <div className="w-[16%] font-inter font-light text-[14px] text-descriptionText">
+                  <p>{item.MemberName}</p>
+                </div>
+                <div className="w-[17%] bg-white ">
+                  <div className="flex items-center">
+                    <div
+                      className={`  py-1 px-[16px] font-inter rounded-lg ${
+                        item.role == "Manager" ? "bg-primaryBg" : "bg-editBg"
                       }`}
                     >
-                      {item.role}
-                    </p>
+                      <p
+                        className={`text-[14px] ${
+                          item.role === "Manager"
+                            ? "text-blueSelected"
+                            : "text-editText"
+                        }`}
+                      >
+                        {item.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="w-[18%]  ">
-                <p className="font-inter font-light text-[14px] text-descriptionText">
-                  {item.joiningDate}
-                </p>
-              </div>
-              <div className="w-[18%]">
-                <p className="font-inter font-light text-[14px] text-descriptionText">
-                  {item.location}
-                </p>
-              </div>
-              <div className="w-[15%]">
-                <div className="flex items-center">
-                  <div
-                    className={` py-1 ${
-                      item.status === "Active"
-                        ? "bg-activebgteams"
-                        : "bg-inactivebg"
-                    } px-[8px] font-inter font-medium rounded-lg`}
-                  >
-                    <p
-                      className={` text-[14px] ${
-                        item.status === "Active" ? "text-active" : "text-error"
-                      }  `}
+                <div className="w-[18%]  ">
+                  <p className="font-inter font-light text-[14px] text-descriptionText">
+                    {item.joiningDate}
+                  </p>
+                </div>
+                <div className="w-[18%]">
+                  <p className="font-inter font-light text-[14px] text-descriptionText">
+                    {item.location}
+                  </p>
+                </div>
+                <div className="w-[15%]">
+                  <div className="flex items-center">
+                    <div
+                      className={` py-1 ${
+                        item.status === "Active"
+                          ? "bg-activebgteams"
+                          : "bg-inactivebg"
+                      } px-[8px] font-inter font-medium rounded-lg`}
                     >
-                      {item.status}
-                    </p>
+                      <p
+                        className={` text-[14px] ${
+                          item.status === "Active"
+                            ? "text-active"
+                            : "text-error"
+                        }  `}
+                      >
+                        {item.status}
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <div className="w-[6%] font-medium text-black relative ">
+                  <button
+                    className="pl-1"
+                    onClick={() => handleButtonClick(item.id)}
+                  >
+                    <AppIcons.union />
+                  </button>
+
+                  {activeButton && (
+                    <Permissions activeButton={activeButton} itemId={item.id} />
+                  )}
+                </div>
               </div>
-              <div className="w-[6%] font-medium text-black relative ">
-                <button
-                  className="pl-1"
-                  onClick={() => handleButtonClick(item.id)}
-                >
-                  <AppIcons.union />
-                </button>
-                <Permissions activeButton={activeButton} itemId={item.id} />
-              </div>
-            </div>
+            </CardComponent>
           ))}
         </div>
       </div>

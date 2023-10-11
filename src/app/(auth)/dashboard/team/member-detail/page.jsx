@@ -50,7 +50,7 @@ const MemberDetail = () => {
                 onClick={() => setJoined(true)}
                 className={`${
                   joined
-                    ? "text-blueSelected border-b border-blueSelected"
+                    ? "text-blueSelected border-b-2 border-blueSelected"
                     : "text-disabled"
                 }`}
               >
@@ -62,7 +62,7 @@ const MemberDetail = () => {
                   className={`${
                     joined
                       ? "text-disabled"
-                      : "text-blueSelected border-b border-blueSelected"
+                      : "text-blueSelected border-b-2 border-blueSelected"
                   }`}
                 >
                   <p className=" px-2  text-[18px] font-medium pb-2">Courses</p>

@@ -13,6 +13,7 @@ const MemberDetailCard = () => {
     createSessions: 20,
     createSession: 10,
     rating: 4.5,
+    status: "Active",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus scelerisque in magna bibendum amet ipsum pellentesque scelerisque dui. Mattis felis venenatis a ut sed diam.",
   };
 
@@ -22,10 +23,22 @@ const MemberDetailCard = () => {
         <p className="text-[20px] font-semibold font-sans text-secondary">
           Member Detail
         </p>
-        <div className=" px-[24px] bg-activebg2 py-[7px] rounded-lg">
-          <p className="font-sans text-[14px] text-active font-medium">
-            Active
-          </p>
+        <div
+          className={`px-[24px] ${
+            memberDetails?.status === "Active"
+              ? "bg-activebg2"
+              : "bg-inactivebg"
+          } py-[7px] rounded-lg`}
+        >
+          {memberDetails?.status === "Active" ? (
+            <div className="font-sans text-[14px] text-active font-medium">
+              Active
+            </div>
+          ) : (
+            <div className="font-sans text-[14px] text-error font-medium">
+              Inactive
+            </div>
+          )}
         </div>
       </div>
 
@@ -105,10 +118,19 @@ const MemberDetailCard = () => {
                     ))}
                     <div></div>
                   </div>
-                  <div className="flex flex-row items-center w-full ">
-                    <p className="pt-[4px] font-inter text-[16px] text-blackSecondary felx flex-row">
-                      {memberDetails.rating} based on 250 subscriptions
+                  <div className="flex flex-row items-center w-full   ">
+                    <p className=" font-inter text-[16px] text-blackSecondary ">
+                      {memberDetails.rating}
                     </p>
+                    <p className="font-inter text-[16px] pl-1 text-blackSecondary">
+                      based on{" "}
+                    </p>
+
+                    <div className=" pb-[4px]">
+                      <a className="font-inter border-b text-[16px] pl-1 text-blueSelected pt-[1px] -pb-[4px]">
+                        250 subs
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

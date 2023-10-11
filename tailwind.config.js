@@ -33,6 +33,7 @@ module.exports = {
       bold: "700",
       medium: "500",
       light: "300",
+      regular:"400"
     },
     extend: {
       width: {

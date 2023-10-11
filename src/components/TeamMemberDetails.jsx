@@ -8,8 +8,8 @@ import member5 from "../../public/assets/images/teammember5.png";
 import member6 from "../../public/assets/images/teammember6.png";
 import member7 from "../../public/assets/images/teammember7.png";
 import member8 from "../../public/assets/images/teammember8.png";
-import AppIcons from "../../public/assets/icons";
-import Permissions from "./Permissions";
+
+
 import TeamDetailsCard from "../components/TeamDetailsCard";
 const TeamMemberDetails = () => {
   
@@ -129,7 +129,7 @@ const TeamMemberDetails = () => {
 
   return (
     <div>
-      <TeamDetailsCard heading={heading} TeamMembers={TeamMembers} />
+      <TeamDetailsCard heading={heading} TeamMembers={TeamMembers} useLink={true}/>
     </div>
   );
 };
