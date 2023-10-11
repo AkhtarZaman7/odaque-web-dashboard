@@ -113,23 +113,24 @@ const MemberDetailCard = () => {
                   <div className="flex flex-row items-center pt-3">
                     {Array.from({ length: 5 }).map((_) => (
                       <div>
-                        <AppIcons.star />
+                        <AppIcons.star fill="#FFDF00" />
                       </div>
                     ))}
                     <div></div>
                   </div>
-                  <div className="flex flex-row items-center w-full   ">
+                  <div className="flex flex-row items-center w-full pt-[3px]   ">
                     <p className=" font-inter text-[16px] text-blackSecondary ">
                       {memberDetails.rating}
                     </p>
                     <p className="font-inter text-[16px] pl-1 text-blackSecondary">
                       based on{" "}
                     </p>
-
-                    <div className=" pb-[4px]">
-                      <a className="font-inter border-b text-[16px] pl-1 text-blueSelected pt-[1px] -pb-[4px]">
-                        250 subs
-                      </a>
+                    <div className="pl-[2px]">
+                      <div className=" border-borderb border-b ">
+                        <p className="text-borderb font-inter text-[16px]  -my-1 ">
+                          250 subs
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

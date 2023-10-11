@@ -538,7 +538,7 @@ const PlusIcon = () => {
   );
 };
 
-const StarIcon = () => {
+const StarIcon = ({fill}) => {
   return (
     <svg
       width="16"
@@ -549,7 +549,7 @@ const StarIcon = () => {
     >
       <path
         d="M8.0293 0.5L10.5862 4.48078L15.1622 5.68237L12.1664 9.34422L12.4377 14.0676L8.0293 12.35L3.62091 14.0676L3.8922 9.34422L0.896373 5.68237L5.47243 4.48078L8.0293 0.5Z"
-        fill="#F2C94C"
+        fill={fill || "#F2C94C"}
       />
     </svg>
   );
