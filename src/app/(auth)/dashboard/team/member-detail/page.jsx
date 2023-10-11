@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import AppIcons from "../../../../../../public/assets/icons";
 import Link from "next/link";
 import MemberDetailCard from "../../../../../components/MemberDetailCard";
+import MemberCourse from "../../../../../components/MemberCourse";
+import MemberSession from "../../../../../components/MemberSession";
 
 const MemberDetail = () => {
   const [joined, setJoined] = useState(true);
@@ -67,9 +69,7 @@ const MemberDetail = () => {
                 </button>
               </div>
             </div>
-            <div>
-              
-            </div>
+            {joined ? <MemberSession /> : <MemberCourse />}
           </div>
         </div>
       </div>

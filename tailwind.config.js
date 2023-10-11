@@ -96,6 +96,7 @@ module.exports = {
         activebgteams: "#f4fdf5",
         inactivebg: "#fff1f1",
         secondary: "#020517",
+        activebg2: "#EEFFE8",
       },
     },
   },

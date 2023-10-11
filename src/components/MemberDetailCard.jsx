@@ -22,7 +22,7 @@ const MemberDetailCard = () => {
         <p className="text-[20px] font-semibold font-sans text-secondary">
           Member Detail
         </p>
-        <div className="bg-editBg px-[24px] py-[7px] rounded-lg">
+        <div className=" px-[24px] bg-activebg2 py-[7px] rounded-lg">
           <p className="font-sans text-[14px] text-active font-medium">
             Active
           </p>

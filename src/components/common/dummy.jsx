@@ -1,5 +1,5 @@
 import fitnessPicture from "../../../public/assets/images/fitnesspicture.png";
-font-medium
+import profilePicture from "../../../public/assets/images/profilepicture.png";
 import AppIcons from "../../../public/assets/icons";
 const iconComponents = [
   AppIcons.completed,
