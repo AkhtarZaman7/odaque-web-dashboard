@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import Permissions from "./Permissions";
 import Link from "next/link";
-const TeamDetailsCard = ({ heading, TeamMembers, useLink }) => {
+const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleButtonClick = (buttonId) => {
     setActiveButton(activeButton === buttonId ? null : buttonId);
   };
-  // const CardComponent = ({ children }) => {
-  //   return useLink ? (
-  //     <Link href="./team/member-detail">{children}</Link>
-  //   ) : (
-  //     <>{children}</>
-  //   );
-  // };
+
   return (
     <div className="pt-[12px]">
       <div>
@@ -53,14 +47,26 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink }) => {
               className="py-[12px] px-[12px] flex flex-row items-center border-b"
               //onClick={() => setActiveButton(null)}
             >
-              
               <div className=" w-[10%] font-medium font-sans text-black">
                 <img height="40px" width="40px" src={item.profile} />
               </div>
-              
-              <div className="w-[16%] font-inter font-light text-[14px] text-descriptionText">
-                <p>{item.MemberName}</p>
-              </div>
+              {useLink ? (
+                <Link
+                  href={route}
+                  className="w-[16%] font-inter font-light text-[14px] text-descriptionText hover:text-primarybg "
+                >
+                  <div className="">
+                    <p>{item.MemberName}</p>
+                  </div>
+                </Link>
+              ) : (
+                <div className="w-[16%] font-inter font-light text-[14px] text-descriptionText hover:text-primarybg ">
+                  <div className="">
+                    <p>{item.MemberName}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="w-[17%] bg-white ">
                 <div className="flex items-center">
                   <div
@@ -109,6 +115,7 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink }) => {
                   </div>
                 </div>
               </div>
+
               <div className="w-[6%] font-medium text-black relative ">
                 <button
                   className="pl-1"

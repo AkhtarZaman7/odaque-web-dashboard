@@ -129,7 +129,7 @@ const TeamMemberDetails = () => {
 
   return (
     <div>
-      <TeamDetailsCard heading={heading} TeamMembers={TeamMembers} useLink={true}/>
+      <TeamDetailsCard heading={heading} TeamMembers={TeamMembers} useLink={true} route="./team/member-detail"/>
     </div>
   );
 };
