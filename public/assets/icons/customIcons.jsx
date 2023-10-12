@@ -2645,6 +2645,124 @@ const SignUpDoneSvg = ({ fill }) => {
     </svg>
   );
 };
+const PlusIconBlue = () => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.125 10H16.875"
+        stroke="#0A6EF0"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10 3.125V16.875"
+        stroke="#0A6EF0"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+const DeleteIcon = (props) => {
+  return (
+    <svg
+      width="12"
+      height="16"
+      viewBox="0 0 12 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M10.167 5H1.833C1.37295 5 1 5.37295 1 5.833V12.5C1 13.8807 2.11929 15 3.5 15H8.5C9.16304 15 9.79893 14.7366 10.2678 14.2678C10.7366 13.7989 11 13.163 11 12.5V5.833C11 5.37295 10.6271 5 10.167 5Z"
+        stroke="#5B5F77"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M9 3.00008L8.894 2.78908C8.3459 1.69263 7.22531 1 5.9995 1C4.77369 1 3.6531 1.69263 3.105 2.78908L3 3.00008H9Z"
+        stroke="#5B5F77"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.08594 8.33203C5.08594 7.91782 4.75015 7.58203 4.33594 7.58203C3.92172 7.58203 3.58594 7.91782 3.58594 8.33203H5.08594ZM3.58594 11.665C3.58594 12.0792 3.92172 12.415 4.33594 12.415C4.75015 12.415 5.08594 12.0792 5.08594 11.665H3.58594ZM8.41406 8.33203C8.41406 7.91782 8.07828 7.58203 7.66406 7.58203C7.24985 7.58203 6.91406 7.91782 6.91406 8.33203H8.41406ZM6.91406 11.665C6.91406 12.0792 7.24985 12.415 7.66406 12.415C8.07828 12.415 8.41406 12.0792 8.41406 11.665H6.91406ZM9 2.25C8.58579 2.25 8.25 2.58579 8.25 3C8.25 3.41421 8.58579 3.75 9 3.75V2.25ZM11 3.75C11.4142 3.75 11.75 3.41421 11.75 3C11.75 2.58579 11.4142 2.25 11 2.25V3.75ZM3 3.75C3.41421 3.75 3.75 3.41421 3.75 3C3.75 2.58579 3.41421 2.25 3 2.25V3.75ZM1 2.25C0.585786 2.25 0.25 2.58579 0.25 3C0.25 3.41421 0.585786 3.75 1 3.75V2.25ZM3.58594 8.33203V11.665H5.08594V8.33203H3.58594ZM6.91406 8.33203V11.665H8.41406V8.33203H6.91406ZM9 3.75H11V2.25H9V3.75ZM3 2.25H1V3.75H3V2.25Z"
+        fill="#5B5F77"
+      />
+    </svg>
+  );
+};
+const EditIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_2751_3766)">
+        <path
+          d="M9.37726 2.589C9.87405 2.05075 10.1224 1.78163 10.3864 1.62465C11.0233 1.24587 11.8075 1.23409 12.455 1.59358C12.7234 1.74256 12.9794 2.00411 13.4915 2.52721C14.0035 3.0503 14.2596 3.31185 14.4054 3.58598C14.7573 4.24744 14.7458 5.04856 14.375 5.69917C14.2213 5.9688 13.9579 6.22255 13.431 6.73004L7.16188 12.7682C6.16338 13.7299 5.66412 14.2108 5.04017 14.4545C4.41621 14.6982 3.73026 14.6803 2.35837 14.6444L2.17171 14.6395C1.75406 14.6286 1.54524 14.6232 1.42385 14.4854C1.30246 14.3476 1.31903 14.1349 1.35218 13.7095L1.37018 13.4785C1.46346 12.2811 1.51011 11.6824 1.74393 11.1442C1.97775 10.606 2.38108 10.169 3.18774 9.29503L9.37726 2.589Z"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M8.65625 2.66406L13.3229 7.33073"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9.32812 14.6641L14.6615 14.6641"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2751_3766">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+const SubscriptionCheckIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="12"
+      viewBox="0 0 16 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14.0015 1.00182L5.00145 9.00182L3.00145 6.00182C2.62829 5.67348 1.42792 5.72323 1.00145 6.00182C0.585644 6.29036 0.74557 7.59389 1.00145 8.00182L3.00145 11.0018C3.23601 11.3401 3.543 12.0018 4.00145 12.0018C4.43858 12.0018 4.76689 11.3401 5.00145 11.0018C5.38527 10.5342 15.0015 2.00182 15.0015 2.00182C15.961 1.08645 14.7691 0.305346 14.0015 1.00182Z"
+        fill="#0A6EF0"
+      />
+    </svg>
+  );
+};
 
 export {
   CancelledIcon,
@@ -2703,5 +2821,9 @@ export {
   CheckIcon,
   TickCheckIcon,
   CameraIcon,
-  SignUpDoneSvg
+  SignUpDoneSvg,
+  PlusIconBlue,
+  EditIcon,
+  DeleteIcon,
+  SubscriptionCheckIcon,
 };

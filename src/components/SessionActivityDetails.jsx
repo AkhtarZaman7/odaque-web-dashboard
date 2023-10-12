@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import AppIcons from "../../public/assets/icons";
 import Link from "next/link";
 
-
 const iconComponents = [
   AppIcons.completed,
   AppIcons.waiting,
@@ -18,9 +17,6 @@ const iconComponents = [
 ];
 
 const SessionActivityDetails = ({ props }) => {
-
-const SessionActivityDetails = () => {
-
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 pt-6">
