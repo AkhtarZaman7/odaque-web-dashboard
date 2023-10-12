@@ -1,13 +1,9 @@
-"use client";
-
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import AppIcons from "../../public/assets/icons";
-import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
-import profilePicture from "../../public/assets/images/profilepicture.png";
 import Link from "next/link";
-import { SessionDetails } from "../components/common/dummy";
+
 
 const iconComponents = [
   AppIcons.completed,
@@ -21,11 +17,14 @@ const iconComponents = [
   AppIcons.star,
 ];
 
+const SessionActivityDetails = ({ props }) => {
+
 const SessionActivityDetails = () => {
+
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 pt-6">
-        {SessionDetails.map((item) => (
+        {props.map((item) => (
           <Link
             key={item.id}
             href={`/dashboard/sessions/session-details?id=${item.id}`}
@@ -34,23 +33,23 @@ const SessionActivityDetails = () => {
             <div key={item.id} className="flex flex-col rounded-lg border p-6">
               <div className="flex flex-row">
                 <img src={item.picture} alt={item.title} />
-                <div className="  ml-9 flex w-full flex-col ">
+                <div className="  ml-9 flex w-full flex-col  ">
                   <div className="flex flex-row justify-between">
-                    <div className="w-40">
-                      <p className="font-inter font-medium text-[18px] leading-tight text-black">
+                    <div className="w-[163px]">
+                      <p className="font-sans font-medium text-[18px] leading-tight text-black -mt-1">
                         {item.title}
                       </p>
                     </div>
-                    <div className="font-inter font-medium text-black text-[16px]">
+                    <div className="font-sans font-medium text-black text-[16px]">
                       {item.price}
                     </div>
                   </div>
-                  <div className="pt-3">
-                    <p className="text-sm text-descriptiontext font-inter">
+                  <div className="pt-[4px]">
+                    <p className="text-sm text-descriptiontext font-inter pt-0">
                       {item.date}
                     </p>
                   </div>
-                  <div className="flex flex-row items-center pt-3">
+                  <div className="flex flex-row items-center pt-1 pb-1">
                     {Array.from({ length: 5 }).map((_) => (
                       <div key={uuidv4()}>
                         {item.starIcon && <item.starIcon />}
@@ -61,6 +60,16 @@ const SessionActivityDetails = () => {
                         ({item.rating})
                       </p>
                     </div>
+                  </div>
+                  <div className="flex flew-row items-center pt-[4px]  pl-[6px]">
+                    {item.subscribers.map((item, index) => (
+                      <div className="flex flex-row ml-[-4px]">
+                        <img src={item.image} alt="subscriber" />
+                      </div>
+                    ))}
+                    <p className="text-[14px] font-medium text-descriptiontext font-inter pl-[4px]">
+                      +3
+                    </p>
                   </div>
                 </div>
               </div>
