@@ -6,10 +6,7 @@ import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
 import profilePicture from "../../public/assets/images/profilepicture.png";
 
 const CourseDetails = () => {
-  const coursestatus = [
-    { id: 1, status: "Reviewed" },
-    { id: 2, status: "Live" },
-  ];
+  const coursestatus = "Live"
   const [selectedInstructor, setSelectedInstructor] = useState(null);
   const [showInstructors, setShowInstructors] = useState(false);
   const instructors = [
@@ -51,21 +48,21 @@ const CourseDetails = () => {
   };
 
   return (
-    <div className="w-full bg-white p-4">
+    <div className="w-full bg-white p-4 rounded-lg">
       <div className="flex flex-row justify-between border-b pb-4">
         <p className="text-[20px] font-sans font-medium text-blackSecondary ">
           Course Details
         </p>
         <div className="flex flex-row items-center rounded-lg ">
-          <div className="rounded-lg bg-editBg">
+          <div className={`rounded-lg  ${coursestatus=== "Reviewed"? "bg-editBg" : "bg-successbg"} `}>
             <p
-              className={`px-[16px] py-1 text-sm font-medium text-editText
+              className={`px-[16px] py-1 text-sm font-medium  ${coursestatus=== "Reviewed"? "text-editText" : "text-success"}
                  font-inter`}
             >
-              Reviewed
+              {coursestatus}
             </p>
           </div>
-          <div className="pl-5  ">{AppIcons.union && <AppIcons.union />}</div>
+          <div className="pl-5  ">{AppIcons.menu && <AppIcons.menu />}</div>
         </div>
       </div>
 
@@ -100,7 +97,7 @@ const CourseDetails = () => {
                   </p>
                 </div>
                 <div className="flex items-center flex-row">
-                  <AppIcons.barbell />
+                  <AppIcons.weight />
                   <p className="pl-[15px] text-[14px] text-blackSecondary font-inter">
                     {Details.fitness}
                   </p>

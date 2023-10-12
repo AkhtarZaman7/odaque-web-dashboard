@@ -78,7 +78,7 @@ export default function CourseItem(props) {
                   </p>
                 </div>
                 <div className="pl-5  ">
-                  {AppIcons.union && <AppIcons.union />}
+                  {AppIcons.menu && <AppIcons.menu />}
                 </div>
               </div>
             </div>

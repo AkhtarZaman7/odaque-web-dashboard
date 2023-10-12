@@ -571,7 +571,7 @@ const VideoIcon = () => {
     </svg>
   );
 };
-const UnionIcon = () => {
+const MenuIcon = () => {
   return (
     <svg
       width="4"
@@ -2641,7 +2641,7 @@ const CurrentLocationIcon = ({ fill }) => {
     </svg>
   );
 };
-const barbellIcon = ({ fill, height, width }) => {
+const WeightIcon = ({ fill, height, width }) => {
   return (
     <svg
       width={width || "25"}
@@ -2806,7 +2806,7 @@ export {
   SettingsIcon,
   StarIcon,
   TeamIcon,
-  UnionIcon,
+  MenuIcon,
   UpIcon,
   UploadIcon,
   WaitingIcon,
@@ -2848,7 +2848,7 @@ export {
   CameraIcon,
   SignUpDoneSvg,
   CurrentLocationIcon,
-  barbellIcon,
+  WeightIcon,
   DollarIcon,
   DropDownIcon,
   VideoIcon,

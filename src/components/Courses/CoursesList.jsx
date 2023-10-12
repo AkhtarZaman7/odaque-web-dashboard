@@ -7,7 +7,7 @@ const Icon = AppIcons.plus;
 export default function CoursesList(props) {
   const { data } = props;
   return (
-    <div className="my-5 flex h-[75vh] grid-cols-1 flex-col divide-y  rounded-md bg-white">
+    <div className="my-5 flex h-[90vh] grid-cols-1 flex-col divide-y  rounded-md bg-white">
       <div className="flex justify-between w-full flex-row p-5 items-center ">
         <p className="font-semibold text-black">Course Activity Details</p>
         <Link href="/dashboard/courses/add-course">
@@ -22,7 +22,7 @@ export default function CoursesList(props) {
           </button>
         </Link>
       </div>
-      <div className=" mb-5 overflow-scroll">
+      <div className=" mb-5 overflow-y-scroll">
         {data.map((item) => {
           return (
             <CourseItem

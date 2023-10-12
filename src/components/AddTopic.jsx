@@ -44,7 +44,7 @@ export const metadata = {
   ],
 };
 
-const AddTopicDetails = ({ handleNextClick, closeAddTopic }) => {
+const AddTopic = ({ handleNextClick, closeAddTopic }) => {
   const [selectedInstructor, setSelectedInstructor] = useState(null);
 
   const handleInstructorChange = (value) => {
@@ -249,4 +249,4 @@ const AddTopicDetails = ({ handleNextClick, closeAddTopic }) => {
   );
 };
 
-export default AddTopicDetails;
+export default AddTopic;

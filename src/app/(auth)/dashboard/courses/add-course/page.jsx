@@ -38,7 +38,7 @@ const slotOptions = [
   { value: 30, label: "30" },
 ];
 
-const Forms = () => {
+const AddCourse = () => {
   const props = {
     name: "file",
     multiple: true,
@@ -269,4 +269,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default AddCourse;

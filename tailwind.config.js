@@ -90,6 +90,8 @@ module.exports = {
         lockbg:"#fff2f1",
         checkbg:"#27AE60",
         secondary:"#020517",
+        success:"#30D158",
+        successbg:"#ecfbf0"
         
       },
     },

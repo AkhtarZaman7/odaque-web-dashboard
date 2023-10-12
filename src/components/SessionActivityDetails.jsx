@@ -3,23 +3,9 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import AppIcons from "../../public/assets/icons";
-import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
-import profilePicture from "../../public/assets/images/profilepicture.png";
+
 import Link from "next/link";
 import { SessionDetails } from "../components/common/dummy";
-
-const iconComponents = [
-  AppIcons.completed,
-  AppIcons.waiting,
-  AppIcons.pending,
-  AppIcons.cancelled,
-  AppIcons.up,
-  AppIcons.down,
-  AppIcons.union,
-  AppIcons.pin,
-  AppIcons.star,
-];
 
 const SessionActivityDetails = () => {
   return (
@@ -105,7 +91,7 @@ const SessionActivityDetails = () => {
                     </p>
                   </div>
                   <div className="pl-5  ">
-                    {item.unionIcon && <item.unionIcon />}
+                    {item.menuIcon && <item.menuIcon />}
                   </div>
                 </div>
               </div>

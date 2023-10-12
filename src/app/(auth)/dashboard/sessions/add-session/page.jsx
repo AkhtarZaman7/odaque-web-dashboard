@@ -53,7 +53,7 @@ const benefitOptions = [
   { value: "Nutritional Guidance", label: "Nutritional Guidance" },
 ];
 
-const Forms = () => {
+const AddSession = () => {
   const props = {
     name: "file",
     multiple: true,
@@ -362,4 +362,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default AddSession;
