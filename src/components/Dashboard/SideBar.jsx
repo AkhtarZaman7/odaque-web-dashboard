@@ -18,6 +18,15 @@ import Profile from "../../../public/assets/images/PorfileDashboard.png";
 import NotificationDropdown from "../NotificationDropdown.jsx";
 
 export default function SideBar(props) {
+  const Tabs = [
+    "Dashboard",
+    "Sessions",
+    "Courses",
+    "Team",
+    "Subscribers",
+    "Subscription",
+    "Settings",
+  ];
   const { open, toggleDrawer, children } = props;
   const path = usePathname();
   const [lightMode, setLightMode] = useState(false);
@@ -112,15 +121,7 @@ export default function SideBar(props) {
                     />
                   </ListItemButton>
                 </ListItem>
-                {[
-                  "Dashboard",
-                  "Sessions",
-                  "Courses",
-                  "Team",
-                  "Subscribers",
-                  "Subscription",
-                  "Settings",
-                ].map((text) => {
+                {Tabs.map((text) => {
                   const iconKey = text.toLowerCase();
                   const Icon = AppIcons[iconKey];
                   return (

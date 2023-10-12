@@ -3,7 +3,7 @@ import AppIcons from "../../public/assets/icons";
 import Link from "next/link";
 const SubscriptionDisplay = () => {
   return (
-    <div className="w-full p-4 bg-white h-full">
+    <div className="w-full p-4 bg-white h-full rounded-md">
       <div className="flex flex-row justify-between border-b pb-4">
         <p className="text-[20px]  font-medium text-blackSecondary font-sans ">
           Subscription Plan

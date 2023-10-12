@@ -6,7 +6,7 @@ import React from "react";
 import AddPlan from "../../../../../components/AddPlan";
 
 
-const Forms = () => {
+const CreatePlan = () => {
   
 
   return (
@@ -14,4 +14,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default CreatePlan;

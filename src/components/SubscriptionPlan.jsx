@@ -43,7 +43,7 @@ const SubscriptionPlan = () => {
     setClickedIndex(index);
   };
   return (
-    <div className="pb-28">
+    <div className="pb-28 pt-1">
       <div className="flex flex-row justify-between border-b pb-4">
         <p className="text-[20px]  font-medium text-blackSecondary font-sans ">
           Current Plan

@@ -5,7 +5,7 @@ import { Button, Col, Form, Input, Select } from "antd";
 import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import SubscriptionPlan from "../components/SubscriptionPlan";
-
+import PlanOverviewCard from "../components/PlanOverviewCard";
 const { Option } = Select;
 
 const slotOptions = [
@@ -40,7 +40,6 @@ const AddPlan = () => {
   };
   const toggleAddBenefit = () => {
     if (inputText) {
-      // Add the input text to a list or perform the desired action
       console.log("Added benefit:", inputText);
       setInputText(""); // Clear the input text
       setBenefit([...benefit, inputText]);
@@ -59,70 +58,7 @@ const AddPlan = () => {
           {stages.includes(2) ? (
             <SubscriptionPlan />
           ) : stages.includes(1) ? (
-            <div>
-              <p className="mb-6 text-xl font-semibold text-blackSecondary">
-                Plan Overview
-              </p>
-              <div className=" w-[79%]">
-                <div className="flex justify-between ">
-                  <div>
-                    <p className="font-inter text-[16px] text-descriptiontext font-light">
-                      Subscription Plan
-                    </p>
-                    <p className="font-inter pt-[10px] text-[16px] text-blackSecondary">
-                      {planData.planTitle}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-inter text-[16px] text-descriptiontext font-light">
-                      Monthly Pricing
-                    </p>
-                    <p className="font-inter pt-[10px] text-[16px] text-blackSecondary">
-                      {planData.monthlyPricing}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-inter text-[16px] text-descriptiontext font-light">
-                      Yearly Pricing
-                    </p>
-                    <p className="font-inter pt-[10px] text-[16px] text-blackSecondary">
-                      {planData.yearlyPricing}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-inter text-[16px] text-descriptiontext font-light">
-                      Type
-                    </p>
-                    <p className="font-inter pt-[10px] text-[16px] text-blackSecondary">
-                      {planData.planType}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-[20px]">
-                <div>
-                  <p className="font-inter text-[16px] text-descriptiontext font-light">
-                    Benefits
-                  </p>
-                  <div className="mt-[16px] space-y-3">
-                    {benefit.map((item, index) => (
-                      <div className="p-[14px] border rounded-lg flex flex-row justify-between">
-                        <p
-                          key={index}
-                          className="font-inter text-[14px] text-descriptiontext"
-                        >
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PlanOverviewCard planData={planData} benefit={benefit} />
           ) : (
             <div>
               <h1 className="mb-4 text-xl font-semibold text-blackSecondary">
@@ -288,9 +224,7 @@ const AddPlan = () => {
               </div>
             </div>
           )}
-          {stages.includes(2) ? (
-            <div></div>
-          ) : (
+          {!stages.includes(2) && (
             <div className="flex items-center justify-between ">
               <div />
               <div className="flex flex-row items-center gap-4 pt-[150px]">
