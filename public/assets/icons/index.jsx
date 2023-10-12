@@ -54,6 +54,7 @@ import {
   TickCheckIcon as tickicon,
   CameraIcon as camera,
   SignUpDoneSvg as signupdone,
+  CloseIcon as close,,
   CurrentLocationIcon as currentlocation,
   WeightIcon as weight,
   DollarIcon as dollar,
@@ -123,7 +124,8 @@ const AppIcons = {
   signupdone,
   dropdown,
   video,
-  play
+  play,
+  close,
 };
 
 export default AppIcons;
