@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import AppIcons from "../../../../../../public/assets/icons";
 import Link from "next/link";
 import MemberDetailCard from "../../../../../components/MemberDetailCard";
-import MemberCourse from "../../../../../components/MemberCourse";
-import MemberSession from "../../../../../components/MemberSession";
+import CourseMember from "../../../../../components/CourseMember";
+import SessionMember from "../../../../../components/SessionMember";
 
 const MemberDetail = () => {
   const [joined, setJoined] = useState(true);
@@ -69,7 +69,7 @@ const MemberDetail = () => {
                 </button>
               </div>
             </div>
-            {joined ? <MemberSession /> : <MemberCourse />}
+            {joined ? <SessionMember /> : <CourseMember />}
           </div>
         </div>
       </div>

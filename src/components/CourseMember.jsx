@@ -5,7 +5,7 @@ import subs2 from "../../public/assets/images/instr2.png";
 import subs3 from "../../public/assets/images/instr3.png";
 import AppIcons from "../../public/assets/icons";
 
-const MemberCourse = () => {
+const CourseMember = () => {
   const data = [
     {
       id: 1,
@@ -146,4 +146,4 @@ const MemberCourse = () => {
     </div>
   );
 };
-export default MemberCourse;
+export default CourseMember;

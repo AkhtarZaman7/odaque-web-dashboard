@@ -31,7 +31,7 @@ const Permissions = ({ activeButton, itemId }) => {
           <div className="w-full items-center py-[14px] flex bg-primaryBg flex-row justify-between px-[31px]">
             <p className="font-inter text-[18px] text-secondary">Edit</p>
             <button onClick={() => setIsEditClicked(false)}>
-              <AppIcons.cross />
+              <AppIcons.close />
             </button>
           </div>
           <div className="w-full items-center py-[14px] flex flex-row justify-between px-[31px]">

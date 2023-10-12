@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -7,7 +5,6 @@ import AppIcons from "../../public/assets/icons";
 import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
 import profilePicture from "../../public/assets/images/profilepicture.png";
 import Link from "next/link";
-import { SessionDetails } from "../components/common/dummy";
 
 const iconComponents = [
   AppIcons.completed,
@@ -21,11 +18,11 @@ const iconComponents = [
   AppIcons.star,
 ];
 
-const SessionActivityDetails = () => {
+const SessionActivityDetails = ({ props }) => {
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 pt-6">
-        {SessionDetails.map((item) => (
+        {props.map((item) => (
           <Link
             key={item.id}
             href={`/dashboard/sessions/session-details?id=${item.id}`}
