@@ -2942,11 +2942,11 @@ export {
   TickCheckIcon,
   CameraIcon,
   SignUpDoneSvg,
-  CloseIcon,,
+  CloseIcon,
   CurrentLocationIcon,
   WeightIcon,
   DollarIcon,
   DropDownIcon,
   VideoIcon,
-  VideoPlayIcon
+  VideoPlayIcon,
 };
