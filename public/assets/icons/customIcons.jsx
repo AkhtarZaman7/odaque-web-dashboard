@@ -80,6 +80,81 @@ const SessionsIcon = (props) => {
     </svg>
   );
 };
+const SubscriptionsIcon = (props) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 13H18.5C18.8978 13 19.2794 12.842 19.5607 12.5607C19.842 12.2794 20 11.8978 20 11.5C20 11.1022 19.842 10.7206 19.5607 10.4393C19.2794 10.158 18.8978 10 18.5 10H17.5C17.1022 10 16.7206 9.84196 16.4393 9.56066C16.158 9.27936 16 8.89782 16 8.5C16 8.10218 16.158 7.72064 16.4393 7.43934C16.7206 7.15804 17.1022 7 17.5 7H20"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M14 3H5C4.73478 3 4.48043 3.10536 4.29289 3.29289C4.10536 3.48043 4 3.73478 4 4V21L6.34 20L8.67 21L11 20L13.33 21L15.66 20L18 21V18"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 11H8M18 7V6V7ZM18 14V13V14ZM12 15H8H12Z"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+const SubscribersIcon = (props) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="7"
+        r="5"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10.9994 15.0703C7.93372 15.5088 5.50879 17.9338 5.07031 20.9995"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19 15V21"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16 18H22"
+        stroke={props.color || "#1A1A1A"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 
 const SettingsIcon = (props) => {
   return (
@@ -2571,6 +2646,24 @@ const SignUpDoneSvg = ({ fill }) => {
   );
 };
 
+const CloseIcon = (props) => {
+  return (
+    <svg
+      width="15"
+      height="16"
+      viewBox="0 0 15 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.39209 8.00003L13.856 1.9336C14.0484 1.72002 14.0484 1.37374 13.856 1.16019C13.6637 0.946632 13.3518 0.946605 13.1594 1.16019L7.69546 7.22661L2.23151 1.16019C2.03914 0.946605 1.72725 0.946605 1.5349 1.16019C1.34256 1.37377 1.34253 1.72005 1.5349 1.9336L6.99885 8L1.5349 14.0664C1.34253 14.28 1.34253 14.6263 1.5349 14.8398C1.63108 14.9466 1.75715 15 1.88322 15C2.00929 15 2.13534 14.9466 2.23154 14.8398L7.69546 8.77345L13.1594 14.8398C13.2556 14.9466 13.3817 15 13.5077 15C13.6338 15 13.7598 14.9466 13.856 14.8398C14.0484 14.6263 14.0484 14.28 13.856 14.0664L8.39209 8.00003Z"
+        fill="#C0C0C5"
+        stroke="#5B5F77"
+      />
+    </svg>
+  );
+};
+
 export {
   CancelledIcon,
   CompletedIcon,
@@ -2584,6 +2677,8 @@ export {
   PlusIcon,
   SessionsIcon,
   SettingsIcon,
+  SubscribersIcon,
+  SubscriptionsIcon,
   StarIcon,
   TeamIcon,
   UnionIcon,
@@ -2626,5 +2721,6 @@ export {
   CheckIcon,
   TickCheckIcon,
   CameraIcon,
-  SignUpDoneSvg
+  SignUpDoneSvg,
+  CloseIcon,
 };

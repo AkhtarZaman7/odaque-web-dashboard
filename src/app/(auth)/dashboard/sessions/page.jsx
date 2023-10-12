@@ -1,6 +1,7 @@
 import SessionActivityDetails from "../../../../components/SessionActivityDetails";
 import SessionHistory from "../../../../components/SessionsHistory";
 import AppIcons from "../../../../../public/assets/icons";
+import { SessionDetails } from "../../../../components/common/dummy";
 import Link from "next/link";
 
 const Icon = AppIcons.plus;
@@ -47,7 +48,7 @@ const Sessions = () => (
             </button>
           </Link>
         </div>
-        <SessionActivityDetails />
+        <SessionActivityDetails props={SessionDetails } />
       </div>
     </div>
   </div>

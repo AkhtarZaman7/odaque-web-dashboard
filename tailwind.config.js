@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -32,6 +33,7 @@ module.exports = {
       bold: "700",
       medium: "500",
       light: "300",
+      regular:"400"
     },
     extend: {
       width: {
@@ -67,7 +69,7 @@ module.exports = {
         unselected: "#a9b2cf",
         blueSelected: "#0A6EF0",
         globalBackground: "#CAD2E6",
-        bgSignUp:"#f5f5f6",
+        bgSignUp: "#f5f5f6",
         lightmode: "#53659E",
         lightgray: "#f4f7fe",
         border: "#e3eaf7",
@@ -85,11 +87,17 @@ module.exports = {
         blackSecondary: "#353745",
         editText: "#efa037",
         editBg: "#fff4e8",
+        trainerbg: "#FFF5EB",
         primaryBg: "#eaf6ff",
-        error:"#FF453A",
-        lockbg:"#fff2f1",
-        checkbg:"#27AE60"
-        
+        error: "#FF453A",
+        lockbg: "#fff2f1",
+        checkbg: "#27AE60",
+        primarygraybg: "#f6f6f6",
+        active: "#27B737",
+        activebgteams: "#f4fdf5",
+        inactivebg: "#fff1f1",
+        secondary: "#020517",
+        activebg2: "#EEFFE8",
       },
     },
   },
