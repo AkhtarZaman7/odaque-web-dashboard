@@ -59,7 +59,8 @@ import {
   DeleteIcon as deleteicon,
   EditIcon as edit,
   PlusIconBlue as blueplus,
-  SubscriptionCheckIcon as subscriptioncheck
+  SubscriptionCheckIcon as subscriptioncheck,
+  CloseIcon as close,
 } from "./customIcons";
 
 const AppIcons = {
@@ -123,7 +124,8 @@ const AppIcons = {
   edit,
   deleteicon,
   blueplus,
-  subscriptioncheck
+  subscriptioncheck,
+  close,
 };
 
 export default AppIcons;

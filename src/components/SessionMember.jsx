@@ -2,6 +2,9 @@ import React from "react";
 import fitnessPicture from "../../public/assets/images/fitnesspicture.png";
 import profilePicture from "../../public/assets/images/profilepicture.png";
 import AppIcons from "../../public/assets/icons";
+import subs1 from "../../public/assets/images/sessions_subs01.png";
+import subs2 from "../../public/assets/images/sessions_subs02.png";
+import subs3 from "../../public/assets/images/sessions_subs02.png";
 import SessionActivityDetails from "./SessionActivityDetails";
 const iconComponents = [
   AppIcons.completed,
@@ -35,6 +38,11 @@ const SessionMember = () => {
       starIcon: iconComponents[8],
       studio: "Studio A",
       unionIcon: iconComponents[6],
+      subscribers: [
+        { id: 1, image: subs1.src },
+        { id: 2, image: subs2.src },
+        { id: 3, image: subs3.src },
+      ],
       category: "Fitness Gym",
       edit: "Edit",
       studio: "Studio A",
