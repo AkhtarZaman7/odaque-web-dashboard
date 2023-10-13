@@ -1,6 +1,10 @@
 import CoursesList from "../../../../components/Courses/CoursesList";
 import DashboardHeader from "../../../../components/Dashboard/DashboardHeader";
-
+import SessionHistory from "../../../../components/SessionsHistory";
+import profilePicture from "../../../../../public/assets/images/profilepicture.png";
+import subs1 from "../../../../../public/assets/images/subs1.png";
+import subs2 from "../../../../../public/assets/images/subs2.png";
+import subs3 from "../../../../../public/assets/images/subs3.png";
 export const metadata = {
   title: "Courses",
   description: "Courses",
@@ -23,13 +27,30 @@ export const metadata = {
     },
   ],
 };
+const coursesHistory = [
+  {
+    id: 1,
+    history: "Held Courses",
+  },
+  {
+    id: 2,
+    history: "Online Courses",
+  },
+  {
+    id: 1,
+    history: "Pending Courses",
+  },
+  {
+    id: 1,
+    history: "Canceled Courses",
+  },
+];
 
 const data = [
   {
     id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -37,15 +58,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 2,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -53,15 +78,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 3,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense.",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -69,15 +98,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 4,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -85,15 +118,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 5,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -101,15 +138,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 6,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -117,15 +158,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
   {
-    id: 1,
-    name: "Hitt Cardio",
-    description:
-      "Boost your cardio and strengthen your core with this 30-minute HIIT workout.",
+    id: 7,
+    name: "HIIT Cardio",
+    description: "Boost your fitness and torch calories with intense",
     image: "/images/hitt-cardio.jpg",
     rating: "4.5",
     startDtae: "2021-01-01",
@@ -133,14 +178,19 @@ const data = [
     status: "Active",
     instructor: {
       name: "John Doe",
-      image: "/images/john-doe.jpg",
+      image: profilePicture.src,
     },
-    location: "Studio 1",
+    subscribers: [
+      { id: 1, image: subs1.src },
+      { id: 2, image: subs2.src },
+      { id: 3, image: subs3.src },
+    ],
+    location: "Studio A",
   },
 ];
 const Courses = () => (
   <div className="content">
-    <DashboardHeader />
+    <SessionHistory coursesHistory={coursesHistory} />
     <CoursesList data={data} />
   </div>
 );

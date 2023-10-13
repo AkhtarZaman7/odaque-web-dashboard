@@ -1,17 +1,7 @@
 "use client";
 
 // import { UploadProps } from "antd";
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  message,
-  Row,
-  Select,
-  Upload,
-} from "antd";
+import { Button, Col, Form, Input, message, Row, Select, Upload } from "antd";
 import React, { useState } from "react";
 
 import AppIcons from "../../../../../../public/assets/icons";
@@ -19,6 +9,7 @@ import instr1 from "../../../../../../public/assets/images/instr1.png";
 import instr2 from "../../../../../../public/assets/images/instr2.png";
 import instr3 from "../../../../../../public/assets/images/instr3.png";
 import instr4 from "../../../../../../public/assets/images/instr4.png";
+import Link from "next/link";
 
 const { Option } = Select;
 const { Dragger } = Upload;
@@ -47,13 +38,7 @@ const slotOptions = [
   { value: 30, label: "30" },
 ];
 
-const benefitOptions = [
-  { value: "Personal Training", label: "Personal Training" },
-  { value: "Group Classes", label: "Group Classes" },
-  { value: "Nutritional Guidance", label: "Nutritional Guidance" },
-];
-
-const AddSession = () => {
+const AddCourse = () => {
   const props = {
     name: "file",
     multiple: true,
@@ -83,25 +68,21 @@ const AddSession = () => {
   };
   return (
     <div className="rounded-md bg-white px-4 pt-3">
-      <h1 className="mb-4 text-xl font-semibold">Create Session</h1>
+      <h1 className="mb-4 text-xl font-semibold">Create Course</h1>
       <Form name="sessionForm" onFinish={onFinish}>
         <Row gutter={16}>
           <Col span={8}>
-            <p className="font-inter">
-              Session Title<span className="pl-1 text-xs text-red-500">*</span>
+            <p className="font-inter ">
+              Course Title<span className="pl-1 text-xs text-red-500">*</span>
             </p>
             <Form.Item
               className="pt-1 font-inter"
-              name="sessionTitle"
+              name="courseTitle"
               rules={[
-                { required: true, message: "Please enter Session Title!" },
+                { required: true, message: "Please enter Course Title!" },
               ]}
             >
-              <Input
-                // style={{ height: "4rem" }}
-                placeholder="Enter Session's Title"
-                size="large"
-              />
+              <Input placeholder="Enter Course Title" size="large" />
             </Form.Item>
           </Col>
           <Col span={8}>
@@ -113,7 +94,7 @@ const AddSession = () => {
               name="price"
               rules={[{ required: true, message: "Please select Price!" }]}
             >
-              <Select placeholder="Select Price" size="large">
+              <Select placeholder="Choose Price" size="large">
                 {priceOptions.map((option) => (
                   <Option key={option.value} value={option.value}>
                     {option.label}
@@ -129,9 +110,9 @@ const AddSession = () => {
             <Form.Item
               className="pt-1 font-inter"
               name="category"
-              rules={[{ required: true, message: "Please select Category!" }]}
+              rules={[{ required: true, message: "Please choose Category!" }]}
             >
-              <Select placeholder="Select Category" size="large">
+              <Select placeholder="Choose Category" size="large">
                 {categoryOptions.map((option) => (
                   <Option key={option.value} value={option.value}>
                     {option.label}
@@ -166,11 +147,7 @@ const AddSession = () => {
                         <img
                           src={instructor.image}
                           alt={instructor.name}
-                          style={{
-                            width: "25px",
-                            height: "25px",
-                            marginRight: "12px",
-                          }} // Customize the image size
+                          className="h-[25px] w-[25px] mr-[12px]"
                         />
                         {instructor.name}
                       </div>
@@ -180,11 +157,7 @@ const AddSession = () => {
                       <img
                         src={instructor.image}
                         alt={instructor.name}
-                        style={{
-                          width: "25px",
-                          height: "25px",
-                          marginRight: "12px",
-                        }}
+                        className="h-[25px] w-[25px] mr-[12px]"
                       />
                       {instructor.name}
                     </div>
@@ -196,50 +169,16 @@ const AddSession = () => {
 
           <Col span={8}>
             <p className="font-inter">
-              End Date<span className="pl-1 text-xs text-red-500">*</span>
-            </p>
-            <Form.Item
-              className="pt-1"
-              name="endDate"
-              rules={[{ required: true, message: "Choose End Date" }]}
-            >
-              <DatePicker
-                placeholder="Select End Date"
-                style={{ width: "100%" }}
-                size="large"
-              />
-            </Form.Item>
-          </Col>
-
-          <Col span={8}>
-            <p className="font-inter">
-              Start Date<span className="pl-1 text-xs text-red-500">*</span>
-            </p>
-            <Form.Item
-              className="pt-1"
-              name="startDate"
-              rules={[{ required: true, message: "Choose End Date" }]}
-            >
-              <DatePicker
-                placeholder="Choose Start Date"
-                style={{ width: "100%" }}
-                size="large"
-              />
-            </Form.Item>
-          </Col>
-
-          <Col span={8}>
-            <p className="font-inter">
               Location<span className="pl-1 text-xs text-red-500">*</span>
             </p>
             <Form.Item
               className="pt-1 font-inter"
               name="location"
               rules={[
-                { required: true, message: "Please enter Session Location!" },
+                { required: true, message: "Please enter Course Location!" },
               ]}
             >
-              <Input placeholder="Enter Session Location" size="large" />
+              <Input placeholder="Enter Course Location" size="large" />
             </Form.Item>
           </Col>
           <Col span={8}>
@@ -260,26 +199,8 @@ const AddSession = () => {
               </Select>
             </Form.Item>
           </Col>
-          <Col span={8}>
-            <p className="font-inter">
-              Benefit<span className="pl-1 text-xs text-red-500">*</span>
-            </p>
-            <Form.Item
-              className="pt-1 font-inter"
-              name="benefits"
-              rules={[{ required: true, message: "Please select Benefit!" }]}
-            >
-              <Select placeholder="Choose Benefit" size="large">
-                {benefitOptions.map((option) => (
-                  <Option key={option.value} value={option.value}>
-                    {option.label}
-                  </Option>
-                ))}
-              </Select>
-            </Form.Item>
-          </Col>
         </Row>
-        <div className="grid grid-cols-2 space-x-5">
+        <div className="">
           <Col>
             <p className="font-inter">
               Description<span className="pl-1 text-xs text-red-500">*</span>
@@ -291,24 +212,8 @@ const AddSession = () => {
             >
               <Input.TextArea
                 size="large"
-                placeholder="Enter Description"
-                autoSize={{ minRows: 5, maxRows: 7 }} // Adjust minRows and maxRows as needed
-              />
-            </Form.Item>
-          </Col>
-          <Col>
-            <p className="font-inter">
-              Benefits<span className="pl-1 text-xs text-red-500">*</span>
-            </p>
-            <Form.Item
-              className="pt-1 font-inter"
-              name="description"
-              rules={[{ required: true, message: "Please enter Benefits!" }]}
-            >
-              <Input.TextArea
-                size="large"
-                placeholder={`1. Improved Physical Fitness\n2. Enhanced Mental Well-being\n3. Effective Weight Management`}
-                autoSize={{ minRows: 5, maxRows: 7 }} // Adjust minRows and maxRows as needed
+                placeholder="Enter Course's Description"
+                autoSize={{ minRows: 5, maxRows: 7 }}
               />
             </Form.Item>
           </Col>
@@ -326,9 +231,9 @@ const AddSession = () => {
             </div>
             <div className="flex flex-row justify-center">
               <p className=" font-inter font-semibold text-disabled">
-                Drop your Session Image here, or
+                Drop your Course Image here, or
               </p>
-              <p className="font-inter font-semibold text-blueSelected">
+              <p className="font-inter font-semibold text-blueSelected pl-1">
                 {" "}
                 browse
               </p>
@@ -347,14 +252,16 @@ const AddSession = () => {
                 Back
               </Button>
             </Form.Item>
-            <Form.Item>
-              <Button
-                className="flex items-center h-[40px] w-[174px] justify-center text-[16px] bg-blueSelected px-16 py-4 font-inter font-medium text-white"
-                htmlType="submit"
-              >
-                Next
-              </Button>
-            </Form.Item>
+            <Link href="/dashboard/courses/course-summary">
+              <Form.Item>
+                <Button
+                  className="flex items-center h-[40px] w-[174px] justify-center text-[16px] bg-blueSelected px-16 py-4 font-inter font-medium text-white"
+                  htmlType="submit"
+                >
+                  Next
+                </Button>
+              </Form.Item>
+            </Link>
           </div>
         </div>
       </Form>
@@ -362,4 +269,4 @@ const AddSession = () => {
   );
 };
 
-export default AddSession;
+export default AddCourse;

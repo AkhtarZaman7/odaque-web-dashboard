@@ -2,21 +2,14 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import AppIcons from "../../public/assets/icons";
+
 import Link from "next/link";
 
-const iconComponents = [
-  AppIcons.completed,
-  AppIcons.waiting,
-  AppIcons.pending,
-  AppIcons.cancelled,
-  AppIcons.up,
-  AppIcons.down,
-  AppIcons.union,
-  AppIcons.pin,
-  AppIcons.star,
-];
 
 const SessionActivityDetails = ({ props }) => {
+
+
+
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 pt-6">
@@ -99,12 +92,18 @@ const SessionActivityDetails = ({ props }) => {
 
                 <div className="flex flex-row items-center rounded-lg ">
                   <div className="rounded-lg bg-statusBg">
-                    <p className="px-2 py-1 text-sm font-semibold text-statusColor font-inter">
+                    <p
+                      className={`px-2 py-1 text-sm font-semibold ${
+                        item.status == "Active"
+                          ? "text-statusColor"
+                          : "text-error"
+                      }  font-inter`}
+                    >
                       {item.status}
                     </p>
                   </div>
                   <div className="pl-5  ">
-                    {item.unionIcon && <item.unionIcon />}
+                    {item.menuIcon && <item.menuIcon />}
                   </div>
                 </div>
               </div>

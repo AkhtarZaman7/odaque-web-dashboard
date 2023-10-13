@@ -13,7 +13,7 @@ import {
   SettingsIcon as settings,
   StarIcon as star,
   TeamIcon as team,
-  UnionIcon as union,
+  MenuIcon as menu,
   UpIcon as up,
   UploadIcon as Upload,
   WaitingIcon as waiting,
@@ -54,12 +54,19 @@ import {
   TickCheckIcon as tickicon,
   CameraIcon as camera,
   SignUpDoneSvg as signupdone,
+  CloseIcon as close,
+  CurrentLocationIcon as currentlocation,
+  WeightIcon as weight,
+  DollarIcon as dollar,
+  DropDownIcon as dropdown,
+  VideoIcon as video,
+  VideoPlayIcon as play,
   SubscribersIcon as subscribers,
   SubscriptionsIcon as subscription,
   DeleteIcon as deleteicon,
   EditIcon as edit,
   PlusIconBlue as blueplus,
-  SubscriptionCheckIcon as subscriptioncheck
+  SubscriptionCheckIcon as subscriptioncheck,
 } from "./customIcons";
 
 const AppIcons = {
@@ -81,7 +88,7 @@ const AppIcons = {
   plus,
   pin,
   star,
-  union,
+  menu,
   Upload,
   Light,
   Notification,
@@ -119,11 +126,18 @@ const AppIcons = {
   check,
   tickicon,
   camera,
+  dollar,
+  weight,
+  currentlocation,
   signupdone,
+  dropdown,
+  video,
+  play,
+  close,
   edit,
   deleteicon,
   blueplus,
-  subscriptioncheck
+  subscriptioncheck,
 };
 
 export default AppIcons;
