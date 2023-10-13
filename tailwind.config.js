@@ -33,7 +33,7 @@ module.exports = {
       bold: "700",
       medium: "500",
       light: "300",
-      regular:"400"
+      regular: "400",
     },
     extend: {
       width: {
@@ -101,6 +101,7 @@ module.exports = {
         inactivebg: "#fff1f1",
         secondary: "#020517",
         activebg2: "#EEFFE8",
+        playtypebg: "#FFF5EB",
       },
     },
   },

@@ -61,12 +61,20 @@ import {
   DropDownIcon as dropdown,
   VideoIcon as video,
   VideoPlayIcon as play,
+  SubscribersIcon as subscribers,
+  SubscriptionsIcon as subscription,
+  DeleteIcon as deleteicon,
+  EditIcon as edit,
+  PlusIconBlue as blueplus,
+  SubscriptionCheckIcon as subscriptioncheck,
 } from "./customIcons";
 
 const AppIcons = {
   dashboard,
   courses,
   team,
+  subscribers,
+  subscription,
   settings,
   sessions,
   Logo,
@@ -126,6 +134,10 @@ const AppIcons = {
   video,
   play,
   close,
+  edit,
+  deleteicon,
+  blueplus,
+  subscriptioncheck,
 };
 
 export default AppIcons;
