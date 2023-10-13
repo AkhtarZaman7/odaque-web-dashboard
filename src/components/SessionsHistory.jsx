@@ -11,7 +11,7 @@ const iconComponents = [
   AppIcons.cancelled,
   AppIcons.up,
   AppIcons.down,
-  AppIcons.union,
+  AppIcons.menu,
   AppIcons.pin,
   AppIcons.star,
 ];

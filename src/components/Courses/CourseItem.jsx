@@ -2,7 +2,7 @@ import React from "react";
 import AppIcons from "../../../public/assets/icons";
 export default function CourseItem(props) {
   return (
-    <div className="px-5 ">
+    <div className=" ">
       <div className="border-b py-5">
         <div className="flex flex-row  justify-between">
           <div className="flex flex-row">
@@ -33,7 +33,7 @@ export default function CourseItem(props) {
                 </div>
               </div>
               <div className="flex flew-row items-center pt-[6px] py-1 pl-[6px]">
-                {props.subscribers.map((item, index) => (
+                {props?.subscribers?.map((item, index) => (
                   <div className="flex flex-row ml-[-4px]">
                     <img src={item.image} alt="subscriber" />
                   </div>
@@ -89,13 +89,13 @@ export default function CourseItem(props) {
                   <img
                     height="44px"
                     width="44px"
-                    src={props.instructor.image}
-                    alt={props.instructor.name}
+                    src={props.instructor?.image}
+                    alt={props.instructor?.name}
                   />
                 </div>
                 <div className="flex flex-col justify-between ">
                   <p className="pl-4 font-inter text-blackSecondary  font-medium text-[16px] pb-1 ">
-                    {props.instructor.name}
+                    {props.instructor?.name}
                   </p>
                   <div className="flex flex-row items-center pl-4 pb-2 ">
                     {AppIcons.pin && <AppIcons.pin />}

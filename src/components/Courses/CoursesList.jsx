@@ -25,6 +25,7 @@ export default function CoursesList(props) {
       <div className=" mb-5 overflow-y-scroll">
         {data.map((item) => {
           return (
+            <div className="px-5">
             <CourseItem
               key={item.id.toString()}
               id={item.id}
@@ -39,6 +40,7 @@ export default function CoursesList(props) {
               location={item.location}
               subscribers={item.subscribers}
             />
+            </div>
           );
         })}
       </div>

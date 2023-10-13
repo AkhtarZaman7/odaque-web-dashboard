@@ -121,7 +121,7 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
                   className="pl-1"
                   onClick={() => handleButtonClick(item.id)}
                 >
-                  <AppIcons.union />
+                  <AppIcons.menu />
                 </button>
 
                 {activeButton && (
