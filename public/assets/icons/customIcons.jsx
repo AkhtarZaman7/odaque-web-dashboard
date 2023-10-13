@@ -2723,6 +2723,63 @@ const DeleteIcon = (props) => {
     </svg>
   );
 };
+const EditIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_2751_3766)">
+        <path
+          d="M9.37726 2.589C9.87405 2.05075 10.1224 1.78163 10.3864 1.62465C11.0233 1.24587 11.8075 1.23409 12.455 1.59358C12.7234 1.74256 12.9794 2.00411 13.4915 2.52721C14.0035 3.0503 14.2596 3.31185 14.4054 3.58598C14.7573 4.24744 14.7458 5.04856 14.375 5.69917C14.2213 5.9688 13.9579 6.22255 13.431 6.73004L7.16188 12.7682C6.16338 13.7299 5.66412 14.2108 5.04017 14.4545C4.41621 14.6982 3.73026 14.6803 2.35837 14.6444L2.17171 14.6395C1.75406 14.6286 1.54524 14.6232 1.42385 14.4854C1.30246 14.3476 1.31903 14.1349 1.35218 13.7095L1.37018 13.4785C1.46346 12.2811 1.51011 11.6824 1.74393 11.1442C1.97775 10.606 2.38108 10.169 3.18774 9.29503L9.37726 2.589Z"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M8.65625 2.66406L13.3229 7.33073"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9.32812 14.6641L14.6615 14.6641"
+          stroke="#5B5F77"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2751_3766">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+const SubscriptionCheckIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="12"
+      viewBox="0 0 16 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14.0015 1.00182L5.00145 9.00182L3.00145 6.00182C2.62829 5.67348 1.42792 5.72323 1.00145 6.00182C0.585644 6.29036 0.74557 7.59389 1.00145 8.00182L3.00145 11.0018C3.23601 11.3401 3.543 12.0018 4.00145 12.0018C4.43858 12.0018 4.76689 11.3401 5.00145 11.0018C5.38527 10.5342 15.0015 2.00182 15.0015 2.00182C15.961 1.08645 14.7691 0.305346 14.0015 1.00182Z"
+        fill="#0A6EF0"
+      />
+    </svg>
+  );
+};
 const CurrentLocationIcon = ({ fill }) => {
   return (
     <svg
@@ -2985,5 +3042,18 @@ export {
   TickCheckIcon,
   CameraIcon,
   SignUpDoneSvg,
+<<<<<<< HEAD
   CloseIcon,
+  CurrentLocationIcon,
+  WeightIcon,
+  DollarIcon,
+  DropDownIcon,
+  VideoIcon,
+  VideoPlayIcon,
+=======
+  PlusIconBlue,
+  EditIcon,
+  DeleteIcon,
+  SubscriptionCheckIcon,
+>>>>>>> main
 };
