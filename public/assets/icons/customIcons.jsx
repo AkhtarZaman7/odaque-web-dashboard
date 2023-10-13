@@ -3042,18 +3042,14 @@ export {
   TickCheckIcon,
   CameraIcon,
   SignUpDoneSvg,
-<<<<<<< HEAD
-  CloseIcon,
   CurrentLocationIcon,
   WeightIcon,
   DollarIcon,
   DropDownIcon,
   VideoIcon,
   VideoPlayIcon,
-=======
   PlusIconBlue,
   EditIcon,
   DeleteIcon,
   SubscriptionCheckIcon,
->>>>>>> main
 };
