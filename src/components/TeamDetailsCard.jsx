@@ -47,9 +47,12 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
               className="py-[12px] px-[12px] flex flex-row items-center border-b"
               //onClick={() => setActiveButton(null)}
             >
-              <div className=" w-[10%] font-medium font-sans text-black">
+              <Link
+                href={route}
+                className=" w-[10%] font-medium font-sans text-black"
+              >
                 <img height="40px" width="40px" src={item.profile} />
-              </div>
+              </Link>
               {useLink ? (
                 <Link
                   href={route}
