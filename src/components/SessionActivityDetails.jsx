@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
+
 import AppIcons from "../../public/assets/icons";
 
 import Link from "next/link";
@@ -51,7 +52,7 @@ const SessionActivityDetails = ({ props }) => {
                     </div>
                   </div>
                   <div className="flex flew-row items-center pt-[4px]  pl-[6px]">
-                    {item.subscribers.map((item, index) => (
+                    {item?.subscribers?.map((item, index) => (
                       <div className="flex flex-row ml-[-4px]">
                         <img src={item.image} alt="subscriber" />
                       </div>
