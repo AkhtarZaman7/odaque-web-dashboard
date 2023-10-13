@@ -33,7 +33,7 @@ module.exports = {
       bold: "700",
       medium: "500",
       light: "300",
-      regular:"400"
+      regular: "400",
     },
     extend: {
       width: {
@@ -92,12 +92,14 @@ module.exports = {
         error: "#FF453A",
         lockbg: "#fff2f1",
         checkbg: "#27AE60",
+        playtype: "#F29213",
         primarygraybg: "#f6f6f6",
         active: "#27B737",
         activebgteams: "#f4fdf5",
         inactivebg: "#fff1f1",
         secondary: "#020517",
         activebg2: "#EEFFE8",
+        playtypebg: "#FFF5EB",
       },
     },
   },
