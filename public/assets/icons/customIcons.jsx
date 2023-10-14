@@ -3001,6 +3001,38 @@ const CloseIcon = (props) => {
     </svg>
   );
 };
+const ForwardEmailIcon = (props) => {
+  return (
+    <svg
+      width="16"
+      height="17"
+      viewBox="0 0 16 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.66797 5.168L6.2013 7.818C7.26797 8.618 8.73464 8.618 9.8013 7.81799L13.3346 5.16797"
+        stroke="#5B5F77"
+        stroke-width="1.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 13.1654H4C2.89543 13.1654 2 12.2699 2 11.1654V5.83203C2 4.72746 2.89543 3.83203 4 3.83203H12C13.1046 3.83203 14 4.72746 14 5.83203V8.4987"
+        stroke="#5B5F77"
+        stroke-width="1.4"
+        stroke-linecap="round"
+      />
+      <path
+        d="M10.668 11.8346L14.0013 11.8346M14.0013 11.8346L12.668 13.168M14.0013 11.8346L12.668 10.5013"
+        stroke="#5B5F77"
+        stroke-width="1.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 export {
   CancelledIcon,
   CompletedIcon,
@@ -3070,4 +3102,5 @@ export {
   DeleteIcon,
   SubscriptionCheckIcon,
   CloseIcon,
+  ForwardEmailIcon,
 };

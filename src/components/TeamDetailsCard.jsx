@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import Permissions from "./Permissions";
 import Link from "next/link";
-const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
+const TeamDetailsCard = ({ heading, Details, useLink, route }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleButtonClick = (buttonId) => {
@@ -10,7 +10,7 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
   };
 
   return (
-    <div className="pt-[12px]">
+    <div className="pt-[12px]  ">
       <div>
         <div className="bg-primarygraybg py-[12px] px-[12px] flex flex-row items-center rounded-tl-lg rounded-tr-lg">
           <div className=" w-[10%] font-medium font-sans text-black text-[14px]">
@@ -36,12 +36,15 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
           </div>
         </div>
         <div
-          className="overflow-y-scroll scrollbar-hide "
+          className={`overflow-y-scroll scrollbar-hide  `}
           style={{
-            height: "calc(100vh - 18rem)",
+            height:
+              route === "./subscribers"
+                ? "calc(100vh - 5rem)" // Replace with the desired height for this route
+                : "calc(100vh - 18rem)",
           }}
         >
-          {TeamMembers.map((item, index) => (
+          {Details.map((item, index) => (
             <div
               key={index}
               className="py-[12px] px-[12px] flex flex-row items-center border-b"
@@ -73,18 +76,25 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
               <div className="w-[17%] bg-white ">
                 <div className="flex items-center">
                   <div
-                    className={`  py-1 px-[16px] font-inter rounded-lg ${
-                      item.role == "Manager" ? "bg-primaryBg" : "bg-editBg"
+                    className={`py-1 px-[16px] font-inter rounded-lg ${
+                      item.role && item.role === "Manager"
+                        ? "bg-primaryBg"
+                        : item.role === "Trainer"
+                        ? "bg-editBg"
+                        : item.subscriptionType && "bg-white"
                     }`}
                   >
                     <p
                       className={`text-[14px] ${
-                        item.role === "Manager"
+                        item.role && item.role === "Manager"
                           ? "text-blueSelected"
-                          : "text-editText"
+                          : item.role === "Trainer"
+                          ? "text-editText"
+                          : item.subscriptionType &&
+                            "text-descriptionText font-light text-[14px] font-inter"
                       }`}
                     >
-                      {item.role}
+                      {item.role || item.subscriptionType}
                     </p>
                   </div>
                 </div>
@@ -103,14 +113,16 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
                 <div className="flex items-center">
                   <div
                     className={` py-1 ${
-                      item.status === "Active"
+                      item.status === "Active" || item.status === "Paid"
                         ? "bg-activebgteams"
                         : "bg-inactivebg"
                     } px-[8px] font-inter font-medium rounded-lg`}
                   >
                     <p
                       className={` text-[14px] ${
-                        item.status === "Active" ? "text-active" : "text-error"
+                        item.status === "Active" || item.status === "Paid"
+                          ? "text-active"
+                          : "text-error"
                       }  `}
                     >
                       {item.status}
@@ -128,7 +140,7 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
                 </button>
 
                 {activeButton && (
-                  <Permissions activeButton={activeButton} itemId={item.id} />
+                  <Permissions activeButton={activeButton} itemId={item.id} route={route} />
                 )}
               </div>
             </div>

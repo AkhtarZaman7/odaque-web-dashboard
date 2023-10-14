@@ -1,24 +1,69 @@
 import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import { Radio } from "antd";
-const Permissions = ({ activeButton, itemId }) => {
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
+import "react-notifications/lib/notifications.css";
+const Permissions = ({ activeButton, itemId, route }) => {
   const [isEditClicked, setIsEditClicked] = useState(false);
 
   const handleEditClick = () => {
     setIsEditClicked(!isEditClicked);
   };
+  const createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case "info":
+          NotificationManager.info("Info message");
+          break;
+        case "success":
+          NotificationManager.success(
+            "Success message",
+            "Email Sent Successfully"
+          );
+          break;
+        case "warning":
+          NotificationManager.warning(
+            "Warning message",
+            "Close after 3000ms",
+            3000
+          );
+          break;
+        case "error":
+          NotificationManager.error("Error message", "Click me!", 5000, () => {
+            alert("callback");
+          });
+          break;
+      }
+    };
+  };
 
   return (
     <div>
       {activeButton === itemId && (
-        <div className="px-[16px] py-[16px] bg-white shadow-md absolute top-0 right-16 z-50 rounded-lg">
+        <div
+          className={`px-[16px] py-[16px] bg-white ${
+            route === "./subscribers" && "w-[150px]"
+          } flex flex-col  shadow-md absolute top-0 right-16 z-50 rounded-lg`}
+        >
           <button
-            onClick={handleEditClick}
-            className="px-2 py-1 flex flex-row mb-2 items-center"
+            onClick={
+              route === "./subscribers"
+                ? () => createNotification("success")()
+                : handleEditClick
+            }
+            className="px-2 py-1 flex flex-row mb-2 items-center "
           >
-            <AppIcons.edit />
+            {route === "./subscribers" ? (
+              <AppIcons.forwardemail />
+            ) : (
+              <AppIcons.edit />
+            )}
+
             <p className="text-[14px] font-inter pl-[10px] text-descriptiontext font-medium ">
-              Edit
+              {route === "./subscribers" ? "Send Email" : "Edit"}
             </p>
           </button>
           <button className="px-2 py-1 flex flex-row text-white items-center">
@@ -78,6 +123,7 @@ const Permissions = ({ activeButton, itemId }) => {
           </div>
         </div>
       )}
+      <NotificationContainer />
     </div>
   );
 };
