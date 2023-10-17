@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import AppIcons from "../../public/assets/icons";
 import Permissions from "./Permissions";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+
 const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleButtonClick = (buttonId) => {
     setActiveButton(activeButton === buttonId ? null : buttonId);
   };
-
+  const { setTheme } = useTheme();
   return (
     <div className="pt-[12px]">
       <div>
@@ -77,15 +79,16 @@ const TeamDetailsCard = ({ heading, TeamMembers, useLink, route }) => {
                       item.role == "Manager" ? "bg-primaryBg" : "bg-editBg"
                     }`}
                   >
-                    <p
+                    <button
                       className={`text-[14px] ${
                         item.role === "Manager"
                           ? "text-blueSelected"
                           : "text-editText"
                       }`}
+                      onClick={() => setTheme("dark")}
                     >
                       {item.role}
-                    </p>
+                    </button>
                   </div>
                 </div>
               </div>
