@@ -1,7 +1,6 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
-
-export default function LineChart() {
+const LineChart = () => {
   const data = [
     {
       id: "Upcoming",
@@ -104,8 +103,6 @@ export default function LineChart() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-
-          
         }}
         axisLeft={{
           tickSize: 5,
@@ -123,7 +120,7 @@ export default function LineChart() {
             anchor: "middle",
             direction: "row",
             justify: false,
-            
+
             translateX: 225,
             translateY: 250,
             itemsSpacing: 0,
@@ -147,14 +144,14 @@ export default function LineChart() {
                 type: "circle",
                 color: "#FF9500",
                 label: "Pending",
-                style: { display: 'inline-flex', alignItems: 'center' }
+                style: { display: "inline-flex", alignItems: "center" },
               },
               {
                 id: "Upcoming",
                 type: "circle",
                 color: "#347AE2",
                 label: "Upcoming",
-                style: { display: 'inline-flex', alignItems: 'center' }
+                style: { display: "inline-flex", alignItems: "center" },
               },
             ],
           },
@@ -163,3 +160,4 @@ export default function LineChart() {
     </div>
   );
 }
+ export default LineChart;

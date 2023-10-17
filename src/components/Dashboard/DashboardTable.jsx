@@ -19,7 +19,7 @@ export default function DashboardTable() {
           <UpcomingSessions />
         </div>
       </div>
-      <Chartjs />
+      {/* <Chartjs /> */}
     </div>
   );
 }
