@@ -16,64 +16,13 @@ const iconComponents = [
   AppIcons.star,
 ];
 
-const SessionHistory = (props) => {
-  const { coursesHistory } = props;
+const SessionHistory = ({props}) => {
 
-  const AllSessions = [
-    {
-      id: 1,
-      sessions: "34,146",
-      history: "Held sessions",
-
-      text: "down",
-      details: "-0.91% this Month",
-      ratio: "2.56",
-      icon: iconComponents[0],
-      direction: iconComponents[4],
-    },
-    {
-      id: 2,
-      sessions: "88,980",
-      history: "Ongoing Sessions",
-      text: "down",
-      details: "-0.91% this Month",
-      ratio: "2.56",
-      icon: iconComponents[1],
-      direction: iconComponents[4],
-    },
-    {
-      id: 3,
-      sessions: "19,935",
-      history: "Ongoing Sessions",
-      text: "down",
-      details: "-0.91% this Month",
-      ratio: "2.56",
-      icon: iconComponents[2],
-      direction: iconComponents[4],
-    },
-    {
-      id: 4,
-      sessions: "20%",
-      history: "Ongoing Sessions",
-      text: "down",
-      details: "-0.91% this Month",
-      ratio: "2.56",
-      icon: iconComponents[3],
-      direction: iconComponents[4],
-    },
-  ];
-  const modifiedSessions = coursesHistory
-    ? coursesHistory.map((overrideFields, index) => {
-        // Merge with AllSessions or use defaults if no overrides
-        const session = { ...AllSessions[index], ...overrideFields };
-        return session;
-      })
-    : AllSessions;
 
   return (
     <div>
       <div className=" grid h-28 grid-cols-4 gap-14 rounded bg-white p-4 pt-2">
-        {modifiedSessions.map((session) => (
+        {props.map((session) => (
           <div
             key={session.id}
             className="flex flex-col rounded-md font-montserrat  "

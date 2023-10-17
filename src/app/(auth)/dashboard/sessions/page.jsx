@@ -2,6 +2,7 @@ import SessionActivityDetails from "../../../../components/SessionActivityDetail
 import SessionHistory from "../../../../components/SessionsHistory";
 import AppIcons from "../../../../../public/assets/icons";
 import { SessionDetails } from "../../../../components/common/dummy";
+import SessionHeader from "../../../../components/SessionHeader";
 import Link from "next/link";
 
 const Icon = AppIcons.plus;
@@ -32,7 +33,7 @@ export const metadata = {
 const Sessions = () => (
   <div>
     <div className="flex flex-1 flex-col space-y-5">
-      <SessionHistory />
+      <SessionHeader/>
       <div className=" flex flex-col rounded-md bg-white p-4">
         <div className="flex justify-between w-full flex-row items-center ">
           <p className="font-semibold text-black">Session Activity Details</p>

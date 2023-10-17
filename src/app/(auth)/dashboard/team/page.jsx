@@ -1,5 +1,5 @@
 import React from "react";
-import SessionHistory from "../../../../components/SessionsHistory";
+import TeamHeader from "../../../../components/TeamHeader";
 import Link from "next/link";
 import AppIcons from "../../../../../public/assets/icons";
 import TeamMemberDetails from "../../../../components/TeamMemberDetails";
@@ -29,7 +29,7 @@ export const metadata = {
 const Team = () => (
   <div className="content">
     <div className="flex flex-1 flex-col space-y-5">
-      <SessionHistory />
+      <TeamHeader />
       <div className=" flex flex-col rounded-md bg-white p-4 h-full">
         <div className="flex justify-between w-full flex-row items-center border-b pb-4">
           <p className="font-semibold text-black text-[20px]">

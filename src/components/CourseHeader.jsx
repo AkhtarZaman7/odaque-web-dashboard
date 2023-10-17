@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import SessionHistory from "../../components/SessionsHistory";
+import SessionHistory from "../components/SessionsHistory";
 
-import AppIcons from "../../../public/assets/icons";
+import AppIcons from "../../public/assets/icons";
 
 const iconComponents = [
   AppIcons.completed,
@@ -16,11 +16,11 @@ const iconComponents = [
   AppIcons.pin,
   AppIcons.star,
 ];
-const dashboardHistory = [
+const courseHistory = [
     {
       id: 1,
       sessions: "34,146",
-      history: "Active Sessions",
+      history: "Held Courses",
       text: "down",
       details: "-0.91% this Month",
       ratio: "2.56",
@@ -30,7 +30,7 @@ const dashboardHistory = [
     {
       id: 2,
       sessions: "88,980",
-      history: "Total Members",
+      history: "Ongoing Courses",
       text: "down",
       details: "-0.91% this Month",
       ratio: "2.56",
@@ -40,17 +40,17 @@ const dashboardHistory = [
     {
       id: 3,
       sessions: "19,935",
-      history: "Upcoming Courses",
+      history: "Ongoing Courses",
       text: "down",
       details: "-0.91% this Month",
       ratio: "2.56",
       icon: iconComponents[2],
-      direction: iconComponents[5],
+      direction: iconComponents[4],
     },
     {
       id: 4,
       sessions: "20%",
-      history: "Revenue",
+      history: "Ongoing Courses",
       text: "down",
       details: "-0.91% this Month",
       ratio: "2.56",
@@ -58,10 +58,9 @@ const dashboardHistory = [
       direction: iconComponents[4],
     },
   ];
-
-export default function DashboardHeader(props) {
-  console.log(props);
-  return <div className="">
-    <SessionHistory props={dashboardHistory}/>
-  </div>;
+const CourseHeader = () => {
+  return (
+    <SessionHistory props={courseHistory}/>
+  )
 }
+export default CourseHeader;

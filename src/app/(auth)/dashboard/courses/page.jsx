@@ -5,6 +5,8 @@ import profilePicture from "../../../../../public/assets/images/profilepicture.p
 import subs1 from "../../../../../public/assets/images/subs1.png";
 import subs2 from "../../../../../public/assets/images/subs2.png";
 import subs3 from "../../../../../public/assets/images/subs3.png";
+import AppIcons from "../../../../../public/assets/icons";
+import CourseHeader from "../../../../components/CourseHeader";
 export const metadata = {
   title: "Courses",
   description: "Courses",
@@ -27,24 +29,6 @@ export const metadata = {
     },
   ],
 };
-const coursesHistory = [
-  {
-    id: 1,
-    history: "Held Courses",
-  },
-  {
-    id: 2,
-    history: "Online Courses",
-  },
-  {
-    id: 1,
-    history: "Pending Courses",
-  },
-  {
-    id: 1,
-    history: "Canceled Courses",
-  },
-];
 
 const data = [
   {
@@ -190,7 +174,7 @@ const data = [
 ];
 const Courses = () => (
   <div className="content">
-    <SessionHistory coursesHistory={coursesHistory} />
+    <CourseHeader />
     <CoursesList data={data} />
   </div>
 );
