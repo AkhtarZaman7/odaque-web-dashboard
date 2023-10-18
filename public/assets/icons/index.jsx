@@ -67,6 +67,8 @@ import {
   EditIcon as edit,
   PlusIconBlue as blueplus,
   SubscriptionCheckIcon as subscriptioncheck,
+  DisplayIcon as displayicon,
+  StarIconDashboard as staricondashboard
 } from "./customIcons";
 
 const AppIcons = {
@@ -138,6 +140,9 @@ const AppIcons = {
   deleteicon,
   blueplus,
   subscriptioncheck,
+  displayicon,
+  staricondashboard
+  
 };
 
 export default AppIcons;

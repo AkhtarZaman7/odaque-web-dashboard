@@ -240,8 +240,17 @@ export default function SideBar(props) {
         </Box>
       </Drawer>
       <div className="flex-1 bg-bgcolor">
-        <div className="grid h-20 grid-cols-[68%_7%_25%] items-center bg-white pl-6 pr-4">
-          <div className="flex h-11 flex-row items-center rounded border border-border p-2">
+        <div className="grid h-20 w-full bg-red-200 items-center pl-5 pr-4">
+          <div className=" flex w-[75%] h-full bg-gray-200 items-center justify-between">
+            <div className="flex flex-row">
+              <AppIcons.displayicon />
+              <div className="pl-[8px]">
+                <AppIcons.staricondashboard />
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="flex h-11 flex-row items-center rounded border border-border p-2">
             <AppIcons.Search />
 
             <input
@@ -275,7 +284,7 @@ export default function SideBar(props) {
               <p className="text-sm font-bold">Sapphire</p>
               <p className="text-xs">odaqueofficial@gmail.com</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="p-5">{children}</div>
       </div>
